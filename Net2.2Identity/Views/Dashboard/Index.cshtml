@@ -6,6 +6,16 @@
 
 
 
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<style>
+    .modal-lg {
+        max-width: 80% !important;
+    }
+</style>
 
 
 
@@ -19,6 +29,361 @@
     <div class="content-page">
         <!-- Start content -->
         <div class="content">
+
+            <div class="container-fluid">
+                <div class="page-title-box">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6">
+                            <h4 class="page-title">Data Table</h4>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Veltrix</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Tables</a></li>
+                                <li class="breadcrumb-item active">Data Table</li>
+                            </ol>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="float-right d-none d-md-block">
+                                <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle arrow-none waves-effect waves-light" data-toggle="modal" data-target=".bs-example-modal-lg" aria-expanded="false">
+                                        + Assign Team
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item"
+                                           href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <div class="dropdown-divider"></div><a class="dropdown-item"
+                                                                               href="#">Separated link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+                <!-- Begining of the modal-->
+                <!--  Modal content for the above example -->
+                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+                     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title mt-0" id="myLargeModalLabel">
+                                    Mentor Profile
+                                </h5><button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    ×
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <div class="row ">
+                                                <div class="form-group col-md-6">
+                                                    <label>Full Name</label>
+                                                    <input type="text" class="colorpicker-default form-control" placeholder="Enter your Fullname...">
+                                                </div>
+                                            </div>
+
+                                            <div class="row ">
+                                                <div class="form-group col-md-4">
+                                                    <label>Email</label>
+                                                    <input type="email" class="colorpicker-default form-control" placeholder="name@sample.com">
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <label>Phone Number</label>
+                                                    <input type="text" class="colorpicker-default form-control" placeholder="Mobile Number">
+                                                </div>
+                                            </div>
+                                            <div class="row ">
+                                                <div class="form-group col-md-6">
+                                                    <label> Address</label>
+                                                    <textarea type="text" class="colorpicker-default form-control" placeholder="Enter your Address..."></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="row ">
+                                                <div class="form-group col-md-3">
+                                                    <label>Industries</label>
+                                                    <input type="email" class="colorpicker-default form-control" placeholder="E.g Telecommunication">
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label>Expertise</label>
+                                                    <input type="text" class="colorpicker-default form-control" placeholder="E.g IoT, Embedded System">
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label>Interests</label>
+                                                    <input type="text" class="colorpicker-default form-control" placeholder="E.g Embedded Systems Startups">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-md-6">
+                                                    <label>Profile</label>
+                                                    <input type="text" class="colorpicker-default form-control" placeholder="He is place holer to depict mentor profile information">
+                                                </div>
+                                            </div>
+                                            <div class="row ">
+                                                <div class="form-group col-md-3">
+                                                    <label>Assign Teams</label>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                        <label class="form-check-label" for="defaultCheck1">
+                                                            Team A
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                        <label class="form-check-label" for="defaultCheck1">
+                                                            Team B
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                        <label class="form-check-label" for="defaultCheck1">
+                                                            Team C
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label></label>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                        <label class="form-check-label" for="defaultCheck1">
+                                                            Team D
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                        <label class="form-check-label" for="defaultCheck1">
+                                                            Team E
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                        <label class="form-check-label" for="defaultCheck1">
+                                                            Team F
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="form-group col-md-2">
+                                                    <div class="col-md-2 ml-auto">
+                                                        <img src="~/images/passportphoto.jpg" />
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group col-md-2">
+                                                    <div class="col-md-2 ml-auto">
+                                                        <label>Attachments</label>
+                                                        <p><u>Profile.docx</u></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Send message</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+                <!-- End of the Modal-->
+                <!-- end row -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mt-0 header-title"></h4>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="mt-0 header-title m-b-20"></h4>
+                                                <form class="repeater" enctype="multipart/form-data">
+                                                    <div data-repeater-list="group-a">
+                                                        <div data-repeater-item class="row">
+                                                            <div class="form-group col-lg-3"></div>
+                                                            <div class="form-group col-lg-5">
+                                                                <label for=""></label> <input type="text" id="name" placeholder=" To search, type name, company name or email and press Enter ......" class="form-control">
+                                                            </div>
+
+                                                            <div class="col-lg-1 align-self-center">
+                                                                <input data-repeater-delete type="button" class="btn btn-primary btn-block" value="Search">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- end row -->
+                                @*<p class="text-muted m-b-30">
+                                        DataTables has most features enabled by default, so all
+                                        you need to do to use it with your own tables is to call the construction
+                                        function: <code>$().DataTable();</code>.
+                                    </p>*@
+                                <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap"
+                                       style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tiger Nixon</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>61</td>
+                                            <td>2011/04/25</td>
+                                            <td>$320,800</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Garrett Winters</td>
+                                            <td>Accountant</td>
+                                            <td>Tokyo</td>
+                                            <td>63</td>
+                                            <td>2011/07/25</td>
+                                            <td>$170,750</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ashton Cox</td>
+                                            <td>Junior Technical Author</td>
+                                            <td>San Francisco</td>
+                                            <td>66</td>
+                                            <td>2009/01/12</td>
+                                            <td>$86,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cedric Kelly</td>
+                                            <td>Senior Javascript Developer</td>
+                                            <td>Edinburgh</td>
+                                            <td>22</td>
+                                            <td>2012/03/29</td>
+                                            <td>$433,060</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Tokyo</td>
+                                            <td>33</td>
+                                            <td>2008/11/28</td>
+                                            <td>$162,700</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Sonya Frost</td>
+                                            <td>Software Engineer</td>
+                                            <td>Edinburgh</td>
+                                            <td>23</td>
+                                            <td>2008/12/13</td>
+                                            <td>$103,600</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jena Gaines</td>
+                                            <td>Office Manager</td>
+                                            <td>London</td>
+                                            <td>30</td>
+                                            <td>2008/12/19</td>
+                                            <td>$90,560</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Gloria Little</td>
+                                            <td>Systems Administrator</td>
+                                            <td>New York</td>
+                                            <td>59</td>
+                                            <td>2009/04/10</td>
+                                            <td>$237,500</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Fiona Green</td>
+                                            <td>Chief Operating Officer (COO)</td>
+                                            <td>San Francisco</td>
+                                            <td>48</td>
+                                            <td>2010/03/11</td>
+                                            <td>$850,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Shou Itou</td>
+                                            <td>Regional Marketing</td>
+                                            <td>Tokyo</td>
+                                            <td>20</td>
+                                            <td>2011/08/14</td>
+                                            <td>$163,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Michelle House</td>
+                                            <td>Integration Specialist</td>
+                                            <td>Sidney</td>
+                                            <td>37</td>
+                                            <td>2011/06/02</td>
+                                            <td>$95,400</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- container-fluid -->
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery  -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/metisMenu.min.js"></script>
+<script src="assets/js/jquery.slimscroll.js"></script>
+<script src="assets/js/waves.min.js"></script><!-- Required datatable js -->
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables/dataTables.bootstrap4.min.js"></script><!-- Buttons examples -->
+<script src="../plugins/datatables/dataTables.buttons.min.js"></script>
+<script src="../plugins/datatables/buttons.bootstrap4.min.js"></script>
+<script src="../plugins/datatables/jszip.min.js"></script>
+<script src="../plugins/datatables/pdfmake.min.js"></script>
+<script src="../plugins/datatables/vfs_fonts.js"></script>
+<script src="../plugins/datatables/buttons.html5.min.js"></script>
+<script src="../plugins/datatables/buttons.print.min.js"></script>
+<script src="../plugins/datatables/buttons.colVis.min.js"></script><!-- Responsive examples -->
+<script src="../plugins/datatables/dataTables.responsive.min.js"></script>
+<script src="../plugins/datatables/responsive.bootstrap4.min.js"></script><!-- Datatable init js -->
+<script src="assets/pages/datatables.init.js"></script><!-- App js -->
+<script src="assets/js/app.js"></script>
+
+
+
+
+
+
+@*<div id="wrapper">
+    Top Bar Start
+    ==============================================================
+    @await Html.PartialAsync("_LayoutHeader")
+    Start right Content here
+    ==============================================================
+    <div class="content-page">
+        Start content
+        <div class="content">
             <div class="container-fluid">
                 <div class="page-title-box">
                     <div class="row align-items-center">
@@ -26,25 +391,25 @@
                             <h4 class="page-title">Home</h4>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
-                                @*<li class="breadcrumb-item"><a href="javascript:void(0);">Extra Pages</a></li>
-                                    <li class="breadcrumb-item active">Pricing</li>*@
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Extra Pages</a></li>
+                                <li class="breadcrumb-item active">Pricing</li>
                             </ol>
                         </div>
-                        @*<div class="col-sm-6">
-                              <div class="float-right d-none d-md-block">
+                        <div class="col-sm-6">
+                            <div class="float-right d-none d-md-block">
                                 <div class="dropdown">
-                                  <button class="btn btn-primary dropdown-toggle arrow-none waves-effect waves-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-settings mr-2"></i> Settings</button>
-                                  <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
-                                  </div>
+                                    <button class="btn btn-primary dropdown-toggle arrow-none waves-effect waves-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-settings mr-2"></i> Settings</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Separated link</a>
+                                    </div>
                                 </div>
-                              </div>
-                            </div>*@
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- end row -->
+                end row
                 <div class="row">
                     <div class="col-xl-3 col-md-6">
                         <div class="card pricing-box">
@@ -68,7 +433,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- end col -->
+                    end col
                     <div class="col-xl-3 col-md-6">
                         <div class="card pricing-box">
                             <div class="card-body">
@@ -91,7 +456,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- end col -->
+                    end col
                     <div class="col-xl-3 col-md-6">
                         <div class="card pricing-box">
                             <div class="card-body">
@@ -114,7 +479,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- end col -->
+                    end col
                     <div class="col-xl-3 col-md-6">
                         <div class="card pricing-box">
                             <div class="card-body">
@@ -138,734 +503,20 @@
                         </div>
                     </div>
 
-                    <!-- end col -->
+                    end col
                 </div>
-                <!-- end row -->
+                end row
             </div>
-            <!-- container-fluid -->
+            container-fluid
         </div>
-        <!-- content -->
+        content
     </div>
 
 
-    <!-- end row --
+    end row --
 
-            @*<div class="content-page">
-                <!-- Start content -->
-                <div class="content">
-                    <div class="container-fluid">
-                        <div class="page-title-box">
-                            <div class="row align-items-center">
-                                <div class="col-sm-6">
-                                    <h4 class="page-title">Dashboard</h4>
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item active">Welcome to Veltrix Dashboard</li>
-                                    </ol>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="float-right d-none d-md-block">
-                                        <div class="dropdown">
-                                            <button class="btn btn-primary dropdown-toggle arrow-none waves-effect waves-light"
-                                                    type="button" data-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                <i class="mdi mdi-settings mr-2"></i>
-                                                Settings
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item"
-                                                   href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                                <div class="dropdown-divider"></div><a class="dropdown-item"
-                                                                                       href="#">Separated link</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- end row -->
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mini-stat bg-primary text-white">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <div class="float-left mini-stat-img mr-4">
-                                                <img src="assets/images/services-icon/01.png" alt="">
-                                            </div>
-                                            <h5 class="font-16 text-uppercase mt-0 text-white-50">Orders</h5>
-                                            <h4 class="font-500">
-                                                1,685 <i class="mdi mdi-arrow-up text-success ml-2"></i>
-                                            </h4>
-                                            <div class="mini-stat-label bg-success">
-                                                <p class="mb-0">+ 12%</p>
-                                            </div>
-                                        </div>
-                                        <div class="pt-2">
-                                            <div class="float-right">
-                                                <a href="#" class="text-white-50">
-                                                    <i class="mdi mdi-arrow-right h5"></i>
-                                                </a>
-                                            </div>
-                                            <p class="text-white-50 mb-0">Since last month</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mini-stat bg-primary text-white">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <div class="float-left mini-stat-img mr-4">
-                                                <img src="assets/images/services-icon/02.png" alt="">
-                                            </div>
-                                            <h5 class="font-16 text-uppercase mt-0 text-white-50">Revenue</h5>
-                                            <h4 class="font-500">
-                                                52,368 <i class="mdi mdi-arrow-down text-danger ml-2"></i>
-                                            </h4>
-                                            <div class="mini-stat-label bg-danger">
-                                                <p class="mb-0">- 28%</p>
-                                            </div>
-                                        </div>
-                                        <div class="pt-2">
-                                            <div class="float-right">
-                                                <a href="#" class="text-white-50">
-                                                    <i class="mdi mdi-arrow-right h5"></i>
-                                                </a>
-                                            </div>
-                                            <p class="text-white-50 mb-0">Since last month</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mini-stat bg-primary text-white">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <div class="float-left mini-stat-img mr-4">
-                                                <img src="assets/images/services-icon/03.png" alt="">
-                                            </div>
-                                            <h5 class="font-16 text-uppercase mt-0 text-white-50">Average Price</h5>
-                                            <h4 class="font-500">
-                                                15.8 <i class="mdi mdi-arrow-up text-success ml-2"></i>
-                                            </h4>
-                                            <div class="mini-stat-label bg-info">
-                                                <p class="mb-0">00%</p>
-                                            </div>
-                                        </div>
-                                        <div class="pt-2">
-                                            <div class="float-right">
-                                                <a href="#" class="text-white-50">
-                                                    <i class="mdi mdi-arrow-right h5"></i>
-                                                </a>
-                                            </div>
-                                            <p class="text-white-50 mb-0">Since last month</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mini-stat bg-primary text-white">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <div class="float-left mini-stat-img mr-4">
-                                                <img src="assets/images/services-icon/04.png" alt="">
-                                            </div>
-                                            <h5 class="font-16 text-uppercase mt-0 text-white-50">Product Sold</h5>
-                                            <h4 class="font-500">
-                                                2436 <i class="mdi mdi-arrow-up text-success ml-2"></i>
-                                            </h4>
-                                            <div class="mini-stat-label bg-warning">
-                                                <p class="mb-0">+ 84%</p>
-                                            </div>
-                                        </div>
-                                        <div class="pt-2">
-                                            <div class="float-right">
-                                                <a href="#" class="text-white-50">
-                                                    <i class="mdi mdi-arrow-right h5"></i>
-                                                </a>
-                                            </div>
-                                            <p class="text-white-50 mb-0">Since last month</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- end row -->
-                        <div class="row">
-                            <div class="col-xl-9">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="mt-0 header-title mb-5">Monthly Earning</h4>
-                                        <div class="row">
-                                            <div class="col-lg-7">
-                                                <div>
-                                                    <div id="chart-with-area" class="ct-chart earning ct-golden-section">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="text-center">
-                                                            <p class="text-muted mb-4">This month</p>
-                                                            <h4>$34,252</h4>
-                                                            <p class="text-muted mb-5">
-                                                                It will be as simple as in fact it
-                                                                will be occidental.
-                                                            </p><span class="peity-donut"
-                                                                      data-peity='{ "fill": ["#02a499", "#f2f2f2"], "innerRadius": 28, "radius": 32 }'
-                                                                      data-width="72" data-height="72">4/5</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="text-center">
-                                                            <p class="text-muted mb-4">Last month</p>
-                                                            <h4>$36,253</h4>
-                                                            <p class="text-muted mb-5">
-                                                                It will be as simple as in fact it
-                                                                will be occidental.
-                                                            </p><span class="peity-donut"
-                                                                      data-peity='{ "fill": ["#02a499", "#f2f2f2"], "innerRadius": 28, "radius": 32 }'
-                                                                      data-width="72" data-height="72">3/5</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end row -->
-                                    </div>
-                                </div><!-- end card -->
-                            </div>
-                            <div class="col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div>
-                                            <h4 class="mt-0 header-title mb-4">Sales Analytics</h4>
-                                        </div>
-                                        <div class="wid-peity mb-4">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div>
-                                                        <p class="text-muted">Online</p>
-                                                        <h5 class="mb-4">1,542</h5>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-4">
-                                                        <span class="peity-line" data-width="100%"
-                                                              data-peity='{ "fill": ["rgba(2, 164, 153,0.3)"],"stroke": ["rgba(2, 164, 153,0.8)"]}'
-                                                              data-height="60">6,2,8,4,3,8,1,3,6,5,9,2,8,1,4,8,9,8,2,1</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="wid-peity mb-4">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div>
-                                                        <p class="text-muted">Offline</p>
-                                                        <h5 class="mb-4">6,451</h5>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-4">
-                                                        <span class="peity-line" data-width="100%"
-                                                              data-peity='{ "fill": ["rgba(2, 164, 153,0.3)"],"stroke": ["rgba(2, 164, 153,0.8)"]}'
-                                                              data-height="60">6,2,8,4,-3,8,1,-3,6,-5,9,2,-8,1,4,8,9,8,2,1</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div>
-                                                        <p class="text-muted">Marketing</p>
-                                                        <h5>84,574</h5>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-4">
-                                                        <span class="peity-line" data-width="100%"
-                                                              data-peity='{ "fill": ["rgba(2, 164, 153,0.3)"],"stroke": ["rgba(2, 164, 153,0.8)"]}'
-                                                              data-height="60">6,2,8,4,3,8,1,3,6,5,9,2,8,1,4,8,9,8,2,1</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- end row -->
-                        <div class="row">
-                            <div class="col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="mt-0 header-title mb-4">Sales Report</h4>
-                                        <div class="cleafix">
-                                            <p class="float-left">
-                                                <i class="mdi mdi-calendar mr-1 text-primary"></i> Jan 01
-                                                - Jan 31
-                                            </p>
-                                            <h5 class="font-18 text-right">$4230</h5>
-                                        </div>
-                                        <div id="ct-donut" class="ct-chart wid"></div>
-                                        <div class="mt-4">
-                                            <table class="table mb-0">
-                                                <tbody>
-                                                    <tr>
-                                                        <td><span class="badge badge-primary">Desk</span></td>
-                                                        <td>Desktop</td>
-                                                        <td class="text-right">54.5%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="badge badge-success">Mob</span></td>
-                                                        <td>Mobile</td>
-                                                        <td class="text-right">28.0%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="badge badge-warning">Tab</span></td>
-                                                        <td>Tablets</td>
-                                                        <td class="text-right">17.5%</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="mt-0 header-title mb-4">Activity</h4>
-                                        <ol class="activity-feed">
-                                            <li class="feed-item">
-                                                <div class="feed-item-list">
-                                                    <span class="date">Jan 22</span> <span class="activity-text">
-                                                        Responded to need “Volunteer
-                                                        Activities”
-                                                    </span>
-                                                </div>
-                                            </li>
-                                            <li class="feed-item">
-                                                <div class="feed-item-list">
-                                                    <span class="date">Jan 20</span> <span class="activity-text">
-                                                        At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui deleniti atque...<a href="#"
-                                                                                                    class="text-success">Read more</a>
-                                                    </span>
-                                                </div>
-                                            </li>
-                                            <li class="feed-item">
-                                                <div class="feed-item-list">
-                                                    <span class="date">Jan 19</span> <span class="activity-text">Joined the group “Boardsmanship Forum”</span>
-                                                </div>
-                                            </li>
-                                            <li class="feed-item">
-                                                <div class="feed-item-list">
-                                                    <span class="date">Jan 17</span> <span class="activity-text">Responded to need “In-Kind Opportunity”</span>
-                                                </div>
-                                            </li>
-                                            <li class="feed-item">
-                                                <div class="feed-item-list">
-                                                    <span class="date">Jan 16</span> <span class="activity-text">
-                                                        Sed ut perspiciatis unde omnis iste natus
-                                                        error sit rem.
-                                                    </span>
-                                                </div>
-                                            </li>
-                                        </ol>
-                                        <div class="text-center"><a href="#" class="btn btn-primary">Load More</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-5">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="card text-center">
-                                            <div class="card-body">
-                                                <div class="py-4">
-                                                    <i class="ion ion-ios-checkmark-circle-outline display-4 text-success"></i>
-                                                    <h5 class="text-primary mt-4">Order Successful</h5>
-                                                    <p class="text-muted">Thanks you so much for your order.</p>
-                                                    <div class="mt-4">
-                                                        <a href="#" class="btn btn-primary btn-sm">
-                                                            Chack
-                                                            Status
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card bg-primary">
-                                            <div class="card-body">
-                                                <div class="text-center text-white py-4">
-                                                    <h5 class="mt-0 mb-4 text-white-50 font-16">Top Product Sale</h5>
-                                                    <h1>1452</h1>
-                                                    <p>Computer</p>
-                                                    <p class="text-white-50 mb-0">
-                                                        At solmen va esser necessi far uniform
-                                                        myth... <a href="#" class="text-white">View more</a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h4 class="mt-0 header-title mb-4">Client Reviews</h4>
-                                                <p class="text-muted mb-5">
-                                                    " Everyone realizes why a new common language
-                                                    would be desirable one could refuse to pay expensive translators it
-                                                    would be necessary. "
-                                                </p>
-                                                <div class="float-right mt-2">
-                                                    <a href="#" class="text-primary">
-                                                        <i class="mdi mdi-arrow-right h5"></i>
-                                                    </a>
-                                                </div>
-                                                <h6 class="mb-0">
-                                                    <img src="assets/images/users/user-3.jpg" alt=""
-                                                         class="thumb-sm rounded-circle mr-2"> James Athey
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- end row -->
-                        <div class="row">
-                            <div class="col-xl-8">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="mt-0 header-title mb-4">Latest Trasaction</h4>
-                                        <div class="table-responsive">
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">(#) Id</th>
-                                                        <th scope="col">Name</th>
-                                                        <th scope="col">Date</th>
-                                                        <th scope="col">Amount</th>
-                                                        <th scope="col" colspan="2">Status</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">#14256</th>
-                                                        <td>
-                                                            <div>
-                                                                <img src="assets/images/users/user-2.jpg" alt=""
-                                                                     class="thumb-md rounded-circle mr-2"> Philip Smead
-                                                            </div>
-                                                        </td>
-                                                        <td>15/1/2018</td>
-                                                        <td>$94</td>
-                                                        <td><span class="badge badge-success">Delivered</span></td>
-                                                        <td>
-                                                            <div><a href="#" class="btn btn-primary btn-sm">Edit</a></div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">#14257</th>
-                                                        <td>
-                                                            <div>
-                                                                <img src="assets/images/users/user-3.jpg" alt=""
-                                                                     class="thumb-md rounded-circle mr-2"> Brent Shipley
-                                                            </div>
-                                                        </td>
-                                                        <td>16/1/2019</td>
-                                                        <td>$112</td>
-                                                        <td><span class="badge badge-warning">Pending</span></td>
-                                                        <td>
-                                                            <div><a href="#" class="btn btn-primary btn-sm">Edit</a></div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">#14258</th>
-                                                        <td>
-                                                            <div>
-                                                                <img src="assets/images/users/user-4.jpg" alt=""
-                                                                     class="thumb-md rounded-circle mr-2"> Robert Sitton
-                                                            </div>
-                                                        </td>
-                                                        <td>17/1/2019</td>
-                                                        <td>$116</td>
-                                                        <td><span class="badge badge-success">Delivered</span></td>
-                                                        <td>
-                                                            <div><a href="#" class="btn btn-primary btn-sm">Edit</a></div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">#14259</th>
-                                                        <td>
-                                                            <div>
-                                                                <img src="assets/images/users/user-5.jpg" alt=""
-                                                                     class="thumb-md rounded-circle mr-2"> Alberto Jackson
-                                                            </div>
-                                                        </td>
-                                                        <td>18/1/2019</td>
-                                                        <td>$109</td>
-                                                        <td><span class="badge badge-danger">Cancel</span></td>
-                                                        <td>
-                                                            <div><a href="#" class="btn btn-primary btn-sm">Edit</a></div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">#14260</th>
-                                                        <td>
-                                                            <div>
-                                                                <img src="assets/images/users/user-6.jpg" alt=""
-                                                                     class="thumb-md rounded-circle mr-2"> David Sanchez
-                                                            </div>
-                                                        </td>
-                                                        <td>19/1/2019</td>
-                                                        <td>$120</td>
-                                                        <td><span class="badge badge-success">Delivered</span></td>
-                                                        <td>
-                                                            <div><a href="#" class="btn btn-primary btn-sm">Edit</a></div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="mt-0 header-title mb-4">Chat</h4>
-                                        <div class="chat-conversation">
-                                            <ul class="conversation-list slimscroll" style="max-height: 400px;">
-                                                <li class="clearfix">
-                                                    <div class="chat-avatar">
-                                                        <img src="assets/images/users/user-2.jpg"
-                                                             alt="male"> <span class="time">10:00</span>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <span class="user-name">John Deo</span>
-                                                            <p>Hello!</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd">
-                                                    <div class="chat-avatar">
-                                                        <img src="assets/images/users/user-3.jpg"
-                                                             alt="Female"> <span class="time">10:01</span>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <span class="user-name">Smith</span>
-                                                            <p>Hi, How are you? What about our next meeting?</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <div class="chat-avatar">
-                                                        <img src="assets/images/users/user-2.jpg"
-                                                             alt="male"> <span class="time">10:04</span>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <span class="user-name">John Deo</span>
-                                                            <p>Yeah everything is fine</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd">
-                                                    <div class="chat-avatar">
-                                                        <img src="assets/images/users/user-3.jpg"
-                                                             alt="male"> <span class="time">10:05</span>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <span class="user-name">Smith</span>
-                                                            <p>Wow that's great</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd">
-                                                    <div class="chat-avatar">
-                                                        <img src="assets/images/users/user-3.jpg"
-                                                             alt="male"> <span class="time">10:08</span>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <span class="user-name mb-2">Smith</span>
-                                                            <img src="assets/images/small/img-1.jpg" alt="" height="48px"
-                                                                 class="rounded mr-2"> <img src="assets/images/small/img-2.jpg" alt="" height="48px"
-                                                                                            class="rounded">
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <div class="row">
-                                                <div class="col-sm-9 col-8 chat-inputbar">
-                                                    <input type="text"
-                                                           class="form-control chat-input" placeholder="Enter your text">
-                                                </div>
-                                                <div class="col-sm-3 col-4 chat-send">
-                                                    <button type="submit"
-                                                            class="btn btn-success btn-block">
-                                                        Send
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- end row -->
-                    </div><!-- container-fluid -->
-                </div><!-- content -->
-                <footer class="footer">
-                    © 2019 TME <span class="d-none d-sm-inline-block">
-                        - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
-                    </span>.
-                </footer>
-            </div><!-- ============================================================== -->*@
-            <!-- End R
-                    <div class="card-body">
-                      <h4 class="mt-0 header-title mb-4"></h4>
-                      <div class="cleafix">
-                        <p class="float-left">
-                          <i class="mdi mdi-calendar mr-1 text-primary"></i>
-                        </p>
-                        <h5 class="font-18 text-right"></h5>
-                      </div>
-                      <div id="ct-donut" class="ct-chart wid"></div>
-                      <div class="mt-4">
-                        <table class="table mb-0">
-                          <tbody>
-                            <tr>
-                              <td><span class="badge badge-primary"></span></td>
-                              <td></td>
-                              <td class="text-right"></td>
-                            </tr>
-                            <tr>
-                              <td><span class="badge badge-success"></span></td>
-                              <td></td>
-                              <td class="text-right"></td>
-                            </tr>
-                            <tr>
-                              <td><span class="badge badge-warning"></span></td>
-                              <td></td>
-                              <td class="text-right"></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <h4 class="mt-0 header-title mb-4"></h4>
-                      <ol class="activity-feed">
-                        <li class="feed-item">
-                          <div class="feed-item-list">
-                            <span class="date"></span><span class="activity-text">
-                            </span>
-                          </div>
-                        </li>
-                        <li class="feed-item">
-                          <div class="feed-item-list">
-                            <span class="date"></span><span class="activity-text">
-                              <a href="#"
-                                 class="text-success"></a>
-                            </span>
-                          </div>
-                        </li>
-                        <li class="feed-item">
-                          <div class="feed-item-list">
-                            <span class="date"></span><span class="activity-text"></span>
-                          </div>
-                        </li>
-                        <li class="feed-item">
-                          <div class="feed-item-list">
-                            <span class="date"></span><span class="activity-text"></span>
-                          </div>
-                        </li>
-                        <li class="feed-item">
-                          <div class="feed-item-list">
-                            <span class="date"></span><span class="activity-text">
-                            </span>
-                          </div>
-                        </li>
-                      </ol>
-                      <div class="text-center"><a href="#" class="btn btn-primary"></a></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-5">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="card text-center">
-                        <div class="card-body">
-                          <div class="py-4">
-                            <i class="ion ion-ios-checkmark-circle-outline display-4 text-success"></i>
-                            <h5 class="text-primary mt-4"></h5>
-                            <p class="text-muted"></p>
-                            <div class="mt-4">
-                              <a href="#" class="btn btn-primary btn-sm">
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="card bg-primary">
-                        <div class="card-body">
-                          <div class="text-center text-white py-4">
-                            <h5 class="mt-0 mb-4 text-white-50 font-16"></h5>
-                            <h1></h1>
-                            <p></p>
-                            <p class="text-white-50 mb-0">
-                              <a href="#" class="text-white"></a>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="card">
-                        <div class="card-body">
-                          <h4 class="mt-0 header-title mb-4"></h4>
-                          <p class="text-muted mb-5">
-                          </p>
-                          <div class="float-right mt-2">
-                            <a href="#" class="text-primary">
-                              <i class="mdi mdi-arrow-right h5"></i>
-                            </a>
-                          </div>
-                          <h6 class="mb-0">
-                            <img src="assets/images/users/user-3.jpg" alt=""
-                                 class="thumb-sm rounded-circle mr-2">
-                          </h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-        </div>
-      </div>
-
-
-      <!-- end row --
-
-    @*<div class="content-page">
-        <!-- Start content -->
+    <div class="content-page">
+         Start content 
         <div class="content">
             <div class="container-fluid">
                 <div class="page-title-box">
@@ -896,7 +547,7 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- end row -->
+                </div> end row 
                 <div class="row">
                     <div class="col-xl-3 col-md-6">
                         <div class="card mini-stat bg-primary text-white">
@@ -1002,7 +653,7 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- end row -->
+                </div> end row 
                 <div class="row">
                     <div class="col-xl-9">
                         <div class="card">
@@ -1043,9 +694,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div><!-- end row -->
+                                </div> end row 
                             </div>
-                        </div><!-- end card -->
+                        </div> end card 
                     </div>
                     <div class="col-xl-3">
                         <div class="card">
@@ -1107,7 +758,7 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- end row -->
+                </div> end row 
                 <div class="row">
                     <div class="col-xl-3">
                         <div class="card">
@@ -1249,7 +900,7 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- end row -->
+                </div> end row 
                 <div class="row">
                     <div class="col-xl-8">
                         <div class="card">
@@ -1433,17 +1084,731 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- end row -->
-            </div><!-- container-fluid -->
-        </div><!-- content -->
+                </div> end row 
+            </div> container-fluid 
+        </div> content 
         <footer class="footer">
             © 2019 TME <span class="d-none d-sm-inline-block">
                 - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
             </span>.
         </footer>
-    </div><!-- ============================================================== -->*@
-    <!-- End Right content here -->
-    <!-- ============================================================== -->
+    </div*@><!-- ============================================================== -->
+    <!-- End R
+                    <div class="card-body">
+                      <h4 class="mt-0 header-title mb-4"></h4>
+                      <div class="cleafix">
+                        <p class="float-left">
+                          <i class="mdi mdi-calendar mr-1 text-primary"></i>
+                        </p>
+                        <h5 class="font-18 text-right"></h5>
+                      </div>
+                      <div id="ct-donut" class="ct-chart wid"></div>
+                      <div class="mt-4">
+                        <table class="table mb-0">
+                          <tbody>
+                            <tr>
+                              <td><span class="badge badge-primary"></span></td>
+                              <td></td>
+                              <td class="text-right"></td>
+                            </tr>
+                            <tr>
+                              <td><span class="badge badge-success"></span></td>
+                              <td></td>
+                              <td class="text-right"></td>
+                            </tr>
+                            <tr>
+                              <td><span class="badge badge-warning"></span></td>
+                              <td></td>
+                              <td class="text-right"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="mt-0 header-title mb-4"></h4>
+                      <ol class="activity-feed">
+                        <li class="feed-item">
+                          <div class="feed-item-list">
+                            <span class="date"></span><span class="activity-text">
+                            </span>
+                          </div>
+                        </li>
+                        <li class="feed-item">
+                          <div class="feed-item-list">
+                            <span class="date"></span><span class="activity-text">
+                              <a href="#"
+                                 class="text-success"></a>
+                            </span>
+                          </div>
+                        </li>
+                        <li class="feed-item">
+                          <div class="feed-item-list">
+                            <span class="date"></span><span class="activity-text"></span>
+                          </div>
+                        </li>
+                        <li class="feed-item">
+                          <div class="feed-item-list">
+                            <span class="date"></span><span class="activity-text"></span>
+                          </div>
+                        </li>
+                        <li class="feed-item">
+                          <div class="feed-item-list">
+                            <span class="date"></span><span class="activity-text">
+                            </span>
+                          </div>
+                        </li>
+                      </ol>
+                      <div class="text-center"><a href="#" class="btn btn-primary"></a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-5">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="card text-center">
+                        <div class="card-body">
+                          <div class="py-4">
+                            <i class="ion ion-ios-checkmark-circle-outline display-4 text-success"></i>
+                            <h5 class="text-primary mt-4"></h5>
+                            <p class="text-muted"></p>
+                            <div class="mt-4">
+                              <a href="#" class="btn btn-primary btn-sm">
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card bg-primary">
+                        <div class="card-body">
+                          <div class="text-center text-white py-4">
+                            <h5 class="mt-0 mb-4 text-white-50 font-16"></h5>
+                            <h1></h1>
+                            <p></p>
+                            <p class="text-white-50 mb-0">
+                              <a href="#" class="text-white"></a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="mt-0 header-title mb-4"></h4>
+                          <p class="text-muted mb-5">
+                          </p>
+                          <div class="float-right mt-2">
+                            <a href="#" class="text-primary">
+                              <i class="mdi mdi-arrow-right h5"></i>
+                            </a>
+                          </div>
+                          <h6 class="mb-0">
+                            <img src="assets/images/users/user-3.jpg" alt=""
+                                 class="thumb-sm rounded-circle mr-2">
+                          </h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+      </div>
+
+
+      <!-- end row --
+
+    <div class="content-page">
+        <!-- Start content -->
+    @*<div class="content">
+        <div class="container-fluid">
+            <div class="page-title-box">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <h4 class="page-title">Dashboard</h4>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active">Welcome to Veltrix Dashboard</li>
+                        </ol>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="float-right d-none d-md-block">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle arrow-none waves-effect waves-light"
+                                        type="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                    <i class="mdi mdi-settings mr-2"></i>
+                                    Settings
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item"
+                                       href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <div class="dropdown-divider"></div><a class="dropdown-item"
+                                                                           href="#">Separated link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> end row 
+            <div class="row">
+                <div class="col-xl-3 col-md-6">
+                    <div class="card mini-stat bg-primary text-white">
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <div class="float-left mini-stat-img mr-4">
+                                    <img src="assets/images/services-icon/01.png" alt="">
+                                </div>
+                                <h5 class="font-16 text-uppercase mt-0 text-white-50">Orders</h5>
+                                <h4 class="font-500">
+                                    1,685 <i class="mdi mdi-arrow-up text-success ml-2"></i>
+                                </h4>
+                                <div class="mini-stat-label bg-success">
+                                    <p class="mb-0">+ 12%</p>
+                                </div>
+                            </div>
+                            <div class="pt-2">
+                                <div class="float-right">
+                                    <a href="#" class="text-white-50">
+                                        <i class="mdi mdi-arrow-right h5"></i>
+                                    </a>
+                                </div>
+                                <p class="text-white-50 mb-0">Since last month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card mini-stat bg-primary text-white">
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <div class="float-left mini-stat-img mr-4">
+                                    <img src="assets/images/services-icon/02.png" alt="">
+                                </div>
+                                <h5 class="font-16 text-uppercase mt-0 text-white-50">Revenue</h5>
+                                <h4 class="font-500">
+                                    52,368 <i class="mdi mdi-arrow-down text-danger ml-2"></i>
+                                </h4>
+                                <div class="mini-stat-label bg-danger">
+                                    <p class="mb-0">- 28%</p>
+                                </div>
+                            </div>
+                            <div class="pt-2">
+                                <div class="float-right">
+                                    <a href="#" class="text-white-50">
+                                        <i class="mdi mdi-arrow-right h5"></i>
+                                    </a>
+                                </div>
+                                <p class="text-white-50 mb-0">Since last month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card mini-stat bg-primary text-white">
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <div class="float-left mini-stat-img mr-4">
+                                    <img src="assets/images/services-icon/03.png" alt="">
+                                </div>
+                                <h5 class="font-16 text-uppercase mt-0 text-white-50">Average Price</h5>
+                                <h4 class="font-500">
+                                    15.8 <i class="mdi mdi-arrow-up text-success ml-2"></i>
+                                </h4>
+                                <div class="mini-stat-label bg-info">
+                                    <p class="mb-0">00%</p>
+                                </div>
+                            </div>
+                            <div class="pt-2">
+                                <div class="float-right">
+                                    <a href="#" class="text-white-50">
+                                        <i class="mdi mdi-arrow-right h5"></i>
+                                    </a>
+                                </div>
+                                <p class="text-white-50 mb-0">Since last month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card mini-stat bg-primary text-white">
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <div class="float-left mini-stat-img mr-4">
+                                    <img src="assets/images/services-icon/04.png" alt="">
+                                </div>
+                                <h5 class="font-16 text-uppercase mt-0 text-white-50">Product Sold</h5>
+                                <h4 class="font-500">
+                                    2436 <i class="mdi mdi-arrow-up text-success ml-2"></i>
+                                </h4>
+                                <div class="mini-stat-label bg-warning">
+                                    <p class="mb-0">+ 84%</p>
+                                </div>
+                            </div>
+                            <div class="pt-2">
+                                <div class="float-right">
+                                    <a href="#" class="text-white-50">
+                                        <i class="mdi mdi-arrow-right h5"></i>
+                                    </a>
+                                </div>
+                                <p class="text-white-50 mb-0">Since last month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> end row 
+            <div class="row">
+                <div class="col-xl-9">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title mb-5">Monthly Earning</h4>
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <div>
+                                        <div id="chart-with-area" class="ct-chart earning ct-golden-section">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="text-center">
+                                                <p class="text-muted mb-4">This month</p>
+                                                <h4>$34,252</h4>
+                                                <p class="text-muted mb-5">
+                                                    It will be as simple as in fact it
+                                                    will be occidental.
+                                                </p><span class="peity-donut"
+                                                          data-peity='{ "fill": ["#02a499", "#f2f2f2"], "innerRadius": 28, "radius": 32 }'
+                                                          data-width="72" data-height="72">4/5</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="text-center">
+                                                <p class="text-muted mb-4">Last month</p>
+                                                <h4>$36,253</h4>
+                                                <p class="text-muted mb-5">
+                                                    It will be as simple as in fact it
+                                                    will be occidental.
+                                                </p><span class="peity-donut"
+                                                          data-peity='{ "fill": ["#02a499", "#f2f2f2"], "innerRadius": 28, "radius": 32 }'
+                                                          data-width="72" data-height="72">3/5</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> end row 
+                        </div>
+                    </div> end card 
+                </div>
+                <div class="col-xl-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                <h4 class="mt-0 header-title mb-4">Sales Analytics</h4>
+                            </div>
+                            <div class="wid-peity mb-4">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div>
+                                            <p class="text-muted">Online</p>
+                                            <h5 class="mb-4">1,542</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-4">
+                                            <span class="peity-line" data-width="100%"
+                                                  data-peity='{ "fill": ["rgba(2, 164, 153,0.3)"],"stroke": ["rgba(2, 164, 153,0.8)"]}'
+                                                  data-height="60">6,2,8,4,3,8,1,3,6,5,9,2,8,1,4,8,9,8,2,1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wid-peity mb-4">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div>
+                                            <p class="text-muted">Offline</p>
+                                            <h5 class="mb-4">6,451</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-4">
+                                            <span class="peity-line" data-width="100%"
+                                                  data-peity='{ "fill": ["rgba(2, 164, 153,0.3)"],"stroke": ["rgba(2, 164, 153,0.8)"]}'
+                                                  data-height="60">6,2,8,4,-3,8,1,-3,6,-5,9,2,-8,1,4,8,9,8,2,1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div>
+                                            <p class="text-muted">Marketing</p>
+                                            <h5>84,574</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-4">
+                                            <span class="peity-line" data-width="100%"
+                                                  data-peity='{ "fill": ["rgba(2, 164, 153,0.3)"],"stroke": ["rgba(2, 164, 153,0.8)"]}'
+                                                  data-height="60">6,2,8,4,3,8,1,3,6,5,9,2,8,1,4,8,9,8,2,1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> end row 
+            <div class="row">
+                <div class="col-xl-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title mb-4">Sales Report</h4>
+                            <div class="cleafix">
+                                <p class="float-left">
+                                    <i class="mdi mdi-calendar mr-1 text-primary"></i> Jan 01
+                                    - Jan 31
+                                </p>
+                                <h5 class="font-18 text-right">$4230</h5>
+                            </div>
+                            <div id="ct-donut" class="ct-chart wid"></div>
+                            <div class="mt-4">
+                                <table class="table mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="badge badge-primary">Desk</span></td>
+                                            <td>Desktop</td>
+                                            <td class="text-right">54.5%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge badge-success">Mob</span></td>
+                                            <td>Mobile</td>
+                                            <td class="text-right">28.0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge badge-warning">Tab</span></td>
+                                            <td>Tablets</td>
+                                            <td class="text-right">17.5%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title mb-4">Activity</h4>
+                            <ol class="activity-feed">
+                                <li class="feed-item">
+                                    <div class="feed-item-list">
+                                        <span class="date">Jan 22</span> <span class="activity-text">
+                                            Responded to need “Volunteer
+                                            Activities”
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="feed-item">
+                                    <div class="feed-item-list">
+                                        <span class="date">Jan 20</span> <span class="activity-text">
+                                            At vero eos et accusamus et iusto odio
+                                            dignissimos ducimus qui deleniti atque...<a href="#"
+                                                                                        class="text-success">Read more</a>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="feed-item">
+                                    <div class="feed-item-list">
+                                        <span class="date">Jan 19</span> <span class="activity-text">Joined the group “Boardsmanship Forum”</span>
+                                    </div>
+                                </li>
+                                <li class="feed-item">
+                                    <div class="feed-item-list">
+                                        <span class="date">Jan 17</span> <span class="activity-text">Responded to need “In-Kind Opportunity”</span>
+                                    </div>
+                                </li>
+                                <li class="feed-item">
+                                    <div class="feed-item-list">
+                                        <span class="date">Jan 16</span> <span class="activity-text">
+                                            Sed ut perspiciatis unde omnis iste natus
+                                            error sit rem.
+                                        </span>
+                                    </div>
+                                </li>
+                            </ol>
+                            <div class="text-center"><a href="#" class="btn btn-primary">Load More</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <div class="py-4">
+                                        <i class="ion ion-ios-checkmark-circle-outline display-4 text-success"></i>
+                                        <h5 class="text-primary mt-4">Order Successful</h5>
+                                        <p class="text-muted">Thanks you so much for your order.</p>
+                                        <div class="mt-4">
+                                            <a href="#" class="btn btn-primary btn-sm">
+                                                Chack
+                                                Status
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-primary">
+                                <div class="card-body">
+                                    <div class="text-center text-white py-4">
+                                        <h5 class="mt-0 mb-4 text-white-50 font-16">Top Product Sale</h5>
+                                        <h1>1452</h1>
+                                        <p>Computer</p>
+                                        <p class="text-white-50 mb-0">
+                                            At solmen va esser necessi far uniform
+                                            myth... <a href="#" class="text-white">View more</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mt-0 header-title mb-4">Client Reviews</h4>
+                                    <p class="text-muted mb-5">
+                                        " Everyone realizes why a new common language
+                                        would be desirable one could refuse to pay expensive translators it
+                                        would be necessary. "
+                                    </p>
+                                    <div class="float-right mt-2">
+                                        <a href="#" class="text-primary">
+                                            <i class="mdi mdi-arrow-right h5"></i>
+                                        </a>
+                                    </div>
+                                    <h6 class="mb-0">
+                                        <img src="assets/images/users/user-3.jpg" alt=""
+                                             class="thumb-sm rounded-circle mr-2"> James Athey
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> end row 
+            <div class="row">
+                <div class="col-xl-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title mb-4">Latest Trasaction</h4>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">(#) Id</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Amount</th>
+                                            <th scope="col" colspan="2">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">#14256</th>
+                                            <td>
+                                                <div>
+                                                    <img src="assets/images/users/user-2.jpg" alt=""
+                                                         class="thumb-md rounded-circle mr-2"> Philip Smead
+                                                </div>
+                                            </td>
+                                            <td>15/1/2018</td>
+                                            <td>$94</td>
+                                            <td><span class="badge badge-success">Delivered</span></td>
+                                            <td>
+                                                <div><a href="#" class="btn btn-primary btn-sm">Edit</a></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">#14257</th>
+                                            <td>
+                                                <div>
+                                                    <img src="assets/images/users/user-3.jpg" alt=""
+                                                         class="thumb-md rounded-circle mr-2"> Brent Shipley
+                                                </div>
+                                            </td>
+                                            <td>16/1/2019</td>
+                                            <td>$112</td>
+                                            <td><span class="badge badge-warning">Pending</span></td>
+                                            <td>
+                                                <div><a href="#" class="btn btn-primary btn-sm">Edit</a></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">#14258</th>
+                                            <td>
+                                                <div>
+                                                    <img src="assets/images/users/user-4.jpg" alt=""
+                                                         class="thumb-md rounded-circle mr-2"> Robert Sitton
+                                                </div>
+                                            </td>
+                                            <td>17/1/2019</td>
+                                            <td>$116</td>
+                                            <td><span class="badge badge-success">Delivered</span></td>
+                                            <td>
+                                                <div><a href="#" class="btn btn-primary btn-sm">Edit</a></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">#14259</th>
+                                            <td>
+                                                <div>
+                                                    <img src="assets/images/users/user-5.jpg" alt=""
+                                                         class="thumb-md rounded-circle mr-2"> Alberto Jackson
+                                                </div>
+                                            </td>
+                                            <td>18/1/2019</td>
+                                            <td>$109</td>
+                                            <td><span class="badge badge-danger">Cancel</span></td>
+                                            <td>
+                                                <div><a href="#" class="btn btn-primary btn-sm">Edit</a></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">#14260</th>
+                                            <td>
+                                                <div>
+                                                    <img src="assets/images/users/user-6.jpg" alt=""
+                                                         class="thumb-md rounded-circle mr-2"> David Sanchez
+                                                </div>
+                                            </td>
+                                            <td>19/1/2019</td>
+                                            <td>$120</td>
+                                            <td><span class="badge badge-success">Delivered</span></td>
+                                            <td>
+                                                <div><a href="#" class="btn btn-primary btn-sm">Edit</a></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title mb-4">Chat</h4>
+                            <div class="chat-conversation">
+                                <ul class="conversation-list slimscroll" style="max-height: 400px;">
+                                    <li class="clearfix">
+                                        <div class="chat-avatar">
+                                            <img src="assets/images/users/user-2.jpg"
+                                                 alt="male"> <span class="time">10:00</span>
+                                        </div>
+                                        <div class="conversation-text">
+                                            <div class="ctext-wrap">
+                                                <span class="user-name">John Deo</span>
+                                                <p>Hello!</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix odd">
+                                        <div class="chat-avatar">
+                                            <img src="assets/images/users/user-3.jpg"
+                                                 alt="Female"> <span class="time">10:01</span>
+                                        </div>
+                                        <div class="conversation-text">
+                                            <div class="ctext-wrap">
+                                                <span class="user-name">Smith</span>
+                                                <p>Hi, How are you? What about our next meeting?</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <div class="chat-avatar">
+                                            <img src="assets/images/users/user-2.jpg"
+                                                 alt="male"> <span class="time">10:04</span>
+                                        </div>
+                                        <div class="conversation-text">
+                                            <div class="ctext-wrap">
+                                                <span class="user-name">John Deo</span>
+                                                <p>Yeah everything is fine</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix odd">
+                                        <div class="chat-avatar">
+                                            <img src="assets/images/users/user-3.jpg"
+                                                 alt="male"> <span class="time">10:05</span>
+                                        </div>
+                                        <div class="conversation-text">
+                                            <div class="ctext-wrap">
+                                                <span class="user-name">Smith</span>
+                                                <p>Wow that's great</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix odd">
+                                        <div class="chat-avatar">
+                                            <img src="assets/images/users/user-3.jpg"
+                                                 alt="male"> <span class="time">10:08</span>
+                                        </div>
+                                        <div class="conversation-text">
+                                            <div class="ctext-wrap">
+                                                <span class="user-name mb-2">Smith</span>
+                                                <img src="assets/images/small/img-1.jpg" alt="" height="48px"
+                                                     class="rounded mr-2"> <img src="assets/images/small/img-2.jpg" alt="" height="48px"
+                                                                                class="rounded">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="row">
+                                    <div class="col-sm-9 col-8 chat-inputbar">
+                                        <input type="text"
+                                               class="form-control chat-input" placeholder="Enter your text">
+                                    </div>
+                                    <div class="col-sm-3 col-4 chat-send">
+                                        <button type="submit"
+                                                class="btn btn-success btn-block">
+                                            Send
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> end row 
+        </div> container-fluid 
+    </div>*@<!-- content -->
+    @*<footer class="footer">
+        © 2019 TME <span class="d-none d-sm-inline-block">
+            - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+        </span>.
+    </footer>
+</div*@><!-- ============================================================== -->
+<!-- End Right content here
+     ==============================================================
 </div>
 
 <!-- END wrapper -->
