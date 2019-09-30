@@ -26,11 +26,11 @@ namespace TME.Controllers
     }
 
     public IActionResult Index()
-        {
+    {
 
-      var mentors = _context.Mentors.ToList();
-            return View(mentors);
-        }
+        var mentors = _context.Mentors.ToList();
+        return View(mentors);
+    }
 
     [HttpPost]
     public IActionResult AddMentor([FromBody]Mentor mentor)
