@@ -216,7 +216,7 @@
                 </div><!-- /.modal -->
                 <!-- End of the Modal-->
                 <!--  Modal content for View Details-->
-                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel22222" aria-hidden="true">
+                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel22222" aria-hidden="true" data-toggle="modal" data-target=".bs-example-modal-lg1">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -407,8 +407,7 @@
                             you need to do to use it with your own tables is to call the construction
                             function: <code>$().DataTable();</code>.
                         </p>*@
-                                <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap"
-                                       style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
                                         <tr>
                                             <th>Name</th>
@@ -416,7 +415,7 @@
                                             <th>Office</th>
                                             <th>Age</th>
                                             <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>View Details</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -426,7 +425,7 @@
                                             <td>Edinburgh</td>
                                             <td>61</td>
                                             <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            <td><button type="button" class="btn btn-primary" id="myModal2"  data-toggle="modal" data-target=".bs-example-modal-lg">View Info</button></td>
                                         </tr>
                                         <tr>
                                             <td>Garrett Winters</td>
