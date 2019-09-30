@@ -12,5 +12,11 @@ namespace TME.Controllers
         {
             return View();
         }
+
+    public IActionResult TeamInfo()
+    {
+      return View();
     }
+
+  }
 }
