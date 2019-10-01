@@ -8,6 +8,10 @@ namespace TME.Models
   public class Member : BaseClass
   {
     public Guid Id { get; set; }
+
+    public Guid TeamId { get; set; }
+    public virtual Team Team { get; set; }
+
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string OtherName { get; set; }

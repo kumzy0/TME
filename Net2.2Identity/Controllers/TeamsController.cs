@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Net2._2Identity.Data;
 using Net2._2Identity.Models;
 using TME.Models;
+using TME.ViewModel;
 
 namespace TME.Controllers
 {
@@ -31,9 +32,18 @@ namespace TME.Controllers
             return View(teams);
         }
 
-    public IActionResult TeamInfo()
+    public IActionResult TeamInfo(Guid id)
     {
-      return View();
+      var team = _context.Teams.FirstOrDefault(x => x.Id == id);
+      var members = _context.Members.Where(x => x.TeamId == id).ToList();
+
+      TeamInfoViewModel tiVM = new TeamInfoViewModel();
+
+      tiVM.Team = team;
+      tiVM.TeamMember = members;
+
+
+      return View(tiVM);
     }
 
     [HttpPost]
@@ -76,6 +86,45 @@ namespace TME.Controllers
       });
     }
 
+    [HttpPost]
+    public IActionResult AddMembers([FromBody]Member member)
+    {
+      if (member == null)
+      {
+        return Json(new
+        {
+          msg = "No Data"
+        }
+       );
+      }
+
+      member.Id = Guid.NewGuid();
+      member.IsActive = true;
+      //mentor.
+
+      try
+      {
+
+        _context.Add(member);
+        _context.SaveChanges();
+
+        return Json(new
+        {
+          msg = "Success"
+        }
+  );
+      }
+      catch (Exception ee)
+      {
+
+      }
+
+      return Json(
+      new
+      {
+        msg = "Fail"
+      });
+    }
 
   }
 }

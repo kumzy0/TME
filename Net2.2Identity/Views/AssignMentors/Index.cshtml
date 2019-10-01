@@ -1,365 +1,321 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+  ViewData["Title"] = "Index";
 }
 
 
 <style>
-    .modal-lg {
-        max-width: 80% !important;
-    }
+  .modal-lg {
+    max-width: 60% !important;
+  }
 </style>
 
 
+@*<link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet" />
+  <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>*@
+
+@*<link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
+  <script src='https://cdn.rawgit.com/pguso/jquery-plugin-circliful/master/js/jquery.circliful.min.js'></script>
+  <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>*@
+
+<link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.min.css" rel="stylesheet"></link>
+<script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
 
 
 <div id="wrapper">
-    <!-- Top Bar Start -->
-    <!-- ============================================================== -->
-    @await Html.PartialAsync("_LayoutHeader")
-    <!-- Start right Content here -->
-    <!-- ============================================================== -->
-    <div class="content-page">
-        <!-- Start content -->
-        <div class="content">
+  <!-- Top Bar Start -->
+  <!-- ============================================================== -->
+  @await Html.PartialAsync("_LayoutHeader")
+  <!-- Start right Content here -->
+  <!-- ============================================================== -->
+  <div class="content-page">
+    <!-- Start content -->
+    <div class="content">
 
-            <div class="container-fluid">
-                <div class="page-title-box">
-                    <div class="row align-items-center">
-                        <div class="col-sm-6">
-                            <h4 class="page-title">Data Table</h4>
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">Assign Mentors</a></li>
-                                <li class="breadcrumb-item active">Data Table</li>
-                            </ol>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="float-right d-none d-md-block">
-                                <div class="dropdown">
-                                    <button class="btn btn-primary dropdown-toggle arrow-none waves-effect waves-light" data-toggle="modal" data-target=".bs-example-modal-lg" aria-expanded="false">
-                                        + Assign Team
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item"
-                                           href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                        <div class="dropdown-divider"></div><a class="dropdown-item"
-                                                                               href="#">Separated link</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <div class="container-fluid">
+        <div class="page-title-box">
+          <div class="row align-items-center">
+            <div class="col-sm-6">
+              <h4 class="page-title">Assgin Mentor</h4>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Assign Mentors</a></li>
+              </ol>
+            </div>
+            <div class="col-sm-6">
+              <div class="float-right d-none d-md-block">
+                <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle arrow-none waves-effect waves-light" data-toggle="modal" data-target=".bs-example-modal-lg" aria-expanded="false">
+                    + Assign Mentor
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item"
+                       href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div><a class="dropdown-item"
+                                                           href="#">Separated link</a>
+                  </div>
                 </div>
-                <!-- end row -->
-                <!-- Begining of the modal-->
-                <!--  Modal content for the above example -->
-                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
-                     aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title mt-0" id="myLargeModalLabel">
-                                    Mentor Profile
-                                </h5><button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                    ×
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="col-md-9">
-                                            <div class="row ">
-                                                <div class="form-group col-md-6">
-                                                    <label>Full Name</label>
-                                                    <input type="text" class="colorpicker-default form-control" placeholder="Enter your Fullname...">
-                                                </div>
-                                            </div>
-
-                                            <div class="row ">
-                                                <div class="form-group col-md-4">
-                                                    <label>Email</label>
-                                                    <input type="email" class="colorpicker-default form-control" placeholder="name@sample.com">
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <label>Phone Number</label>
-                                                    <input type="text" class="colorpicker-default form-control" placeholder="Mobile Number">
-                                                </div>
-                                            </div>
-                                            <div class="row ">
-                                                <div class="form-group col-md-6">
-                                                    <label> Address</label>
-                                                    <textarea type="text" class="colorpicker-default form-control" placeholder="Enter your Address..."></textarea>
-                                                </div>
-                                            </div>
-
-                                            <div class="row ">
-                                                <div class="form-group col-md-3">
-                                                    <label>Industries</label>
-                                                    <input type="email" class="colorpicker-default form-control" placeholder="E.g Telecommunication">
-                                                </div>
-                                                <div class="form-group col-md-3">
-                                                    <label>Expertise</label>
-                                                    <input type="text" class="colorpicker-default form-control" placeholder="E.g IoT, Embedded System">
-                                                </div>
-                                                <div class="form-group col-md-3">
-                                                    <label>Interests</label>
-                                                    <input type="text" class="colorpicker-default form-control" placeholder="E.g Embedded Systems Startups">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="form-group col-md-6">
-                                                    <label>Profile</label>
-                                                    <input type="text" class="colorpicker-default form-control" placeholder="He is place holer to depict mentor profile information">
-                                                </div>
-                                            </div>
-                                            <div class="row ">
-                                                <div class="form-group col-md-3">
-                                                    <label>Assign Teams</label>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Team A
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Team B
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Team C
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-md-3">
-                                                    <label></label>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Team D
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Team E
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">
-                                                            Team F
-                                                        </label>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="row">
-                                                <div class="form-group col-md-2">
-                                                    <div class="col-md-2 ml-auto">
-                                                        <img src="~/images/passportphoto.jpg" />
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="form-group col-md-2">
-                                                    <div class="col-md-2 ml-auto">
-                                                        <label>Attachments</label>
-                                                        <p><u>Profile.docx</u></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Submit</button>
-                            </div>
-                        </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                </div><!-- /.modal -->
-                <!-- End of the Modal-->
-                <!-- end row -->
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mt-0 header-title"></h4>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h4 class="mt-0 header-title m-b-20"></h4>
-                                                <form class="repeater" enctype="multipart/form-data">
-                                                    <div data-repeater-list="group-a">
-                                                        <div data-repeater-item class="row">
-                                                            <div class="form-group col-lg-3"></div>
-                                                            <div class="form-group col-lg-5">
-                                                                <label for=""></label> <input type="text" id="name" placeholder=" To search, type name, company name or email and press Enter ......" class="form-control">
-                                                            </div>
-
-                                                            <div class="col-lg-1 align-self-center">
-                                                                <input data-repeater-delete type="button" class="btn btn-primary btn-block" value="Search">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- end row -->
-                                @*<p class="text-muted m-b-30">
-                                        DataTables has most features enabled by default, so all
-                                        you need to do to use it with your own tables is to call the construction
-                                        function: <code>$().DataTable();</code>.
-                                    </p>*@
-                                <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap"
-                                       style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>2011/07/25</td>
-                                            <td>$170,750</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>66</td>
-                                            <td>2009/01/12</td>
-                                            <td>$86,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2012/03/29</td>
-                                            <td>$433,060</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>33</td>
-                                            <td>2008/11/28</td>
-                                            <td>$162,700</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Sonya Frost</td>
-                                            <td>Software Engineer</td>
-                                            <td>Edinburgh</td>
-                                            <td>23</td>
-                                            <td>2008/12/13</td>
-                                            <td>$103,600</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jena Gaines</td>
-                                            <td>Office Manager</td>
-                                            <td>London</td>
-                                            <td>30</td>
-                                            <td>2008/12/19</td>
-                                            <td>$90,560</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Gloria Little</td>
-                                            <td>Systems Administrator</td>
-                                            <td>New York</td>
-                                            <td>59</td>
-                                            <td>2009/04/10</td>
-                                            <td>$237,500</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Fiona Green</td>
-                                            <td>Chief Operating Officer (COO)</td>
-                                            <td>San Francisco</td>
-                                            <td>48</td>
-                                            <td>2010/03/11</td>
-                                            <td>$850,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Shou Itou</td>
-                                            <td>Regional Marketing</td>
-                                            <td>Tokyo</td>
-                                            <td>20</td>
-                                            <td>2011/08/14</td>
-                                            <td>$163,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Michelle House</td>
-                                            <td>Integration Specialist</td>
-                                            <td>Sidney</td>
-                                            <td>37</td>
-                                            <td>2011/06/02</td>
-                                            <td>$95,400</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div><!-- end col -->
-                </div><!-- end row -->
-            </div><!-- container-fluid -->
+              </div>
+            </div>
+          </div>
         </div>
+        <!-- end row -->
+        <!-- Begining of the modal-->
+        <!--  Modal content for the above example -->
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+             aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">
+                  Assign Mentor
+                </h5><button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  ×
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="row ">
+                        <div class="form-group col-md-5">
+                          <label>Team</label>
+                          <input type="text" hidden id="autoTeamId" />
+                          <input type="text" id="autoTeam" name="autoTeam" class="form-control" placeholder="Team Positive">
+                        </div>
+                        <div class="form-group col-md-1 align-content-center">
+                          <i class="mdi mdi-account-switch mdi-48px m-b-15"></i>
+                        </div>
+                        <div class="form-group col-md-5">
+                          <label>Mentor</label>
+                          <input type="text" hidden id="autoMentorId" />
+                          <input type="text" autocomplete="on" class="colorpicker-default form-control" placeholder="Prof Jang">
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Submit</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- End of the Modal-->
+        <!-- end row -->
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="mt-0 header-title"></h4>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4 class="mt-0 header-title m-b-20"></h4>
+                        <form class="repeater" enctype="multipart/form-data">
+                          <div data-repeater-list="group-a">
+                            <div data-repeater-item class="row">
+                              <div class="form-group col-lg-3"></div>
+                              <div class="form-group col-lg-6">
+                                <label for=""></label> <input type="text" id="name" placeholder=" To search, type name, company name or email and press Enter ......" class="form-control">
+                              </div>
+
+                              @*<div class="col-lg-1 align-self-center">
+                                    <input data-repeater-delete type="button" class="btn btn-primary btn-block" value="Search">
+                                </div>*@
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- end row -->
+                @*<p class="text-muted m-b-30">
+                      DataTables has most features enabled by default, so all
+                      you need to do to use it with your own tables is to call the construction
+                      function: <code>$().DataTable();</code>.
+                  </p>*@
+                <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap"
+                       style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                  <thead>
+                    <tr>
+                      <th>Venture Name</th>
+                      <th>Mentor</th>
+                      <th>Date</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Tiger Nixon</td>
+                      <td>System Architect</td>
+                      <td>2011/04/25</td>
+                      <td><a asp-action="TeamInfo" class="btn btn-primary">View Info</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div><!-- end col -->
+        </div><!-- end row -->
+      </div><!-- container-fluid -->
     </div>
+  </div>
 </div>
 
-
 <!-- jQuery  -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/metisMenu.min.js"></script>
-<script src="assets/js/jquery.slimscroll.js"></script>
-<script src="assets/js/waves.min.js"></script><!-- Required datatable js -->
-<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../plugins/datatables/dataTables.bootstrap4.min.js"></script><!-- Buttons examples -->
-<script src="../plugins/datatables/dataTables.buttons.min.js"></script>
-<script src="../plugins/datatables/buttons.bootstrap4.min.js"></script>
-<script src="../plugins/datatables/jszip.min.js"></script>
-<script src="../plugins/datatables/pdfmake.min.js"></script>
-<script src="../plugins/datatables/vfs_fonts.js"></script>
-<script src="../plugins/datatables/buttons.html5.min.js"></script>
-<script src="../plugins/datatables/buttons.print.min.js"></script>
-<script src="../plugins/datatables/buttons.colVis.min.js"></script><!-- Responsive examples -->
-<script src="../plugins/datatables/dataTables.responsive.min.js"></script>
-<script src="../plugins/datatables/responsive.bootstrap4.min.js"></script><!-- Datatable init js -->
-<script src="assets/pages/datatables.init.js"></script><!-- App js -->
-<script src="assets/js/app.js"></script>
+@*<script src="~/assets/js/jquery.min.js"></script>*@
+@*<script src="~/assets/js/metisMenu.min.js"></script>
+  <script src="~/assets/js/jquery.slimscroll.js"></script>
+  <script src="~/assets/js/waves.min.js"></script>
 
+  <script src="~/plugins/chartist/js/chartist.min.js"></script>
+  <script src="~/plugins/chartist/js/chartist-plugin-tooltip.min.js"></script><!-- peity JS -->
+  <script src="~/plugins/peity-chart/jquery.peity.min.js"></script>
+  <script src="~/assets/pages/dashboard.js"></script><!-- App js -->
+  <script src="~/assets/js/app.js"></script>*@
+
+@*<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script><!-- Buttons examples -->
+  <script src="~/plugins/datatables/dataTables.buttons.min.js"></script>
+  <script src="~/plugins/datatables/buttons.bootstrap4.min.js"></script>
+  <script src="~/plugins/datatables/jszip.min.js"></script>
+  <script src="~/plugins/datatables/pdfmake.min.js"></script>
+  <script src="~/plugins/datatables/vfs_fonts.js"></script>
+  <script src="~/plugins/datatables/buttons.html5.min.js"></script>
+  <script src="~/plugins/datatables/buttons.print.min.js"></script>
+  <script src="~/plugins/datatables/buttons.colVis.min.js"></script><!-- Responsive examples -->
+  <script src="~/plugins/datatables/dataTables.responsive.min.js"></script>
+  <script src="~/plugins/datatables/responsive.bootstrap4.min.js"></script><!-- Datatable init js -->
+  <script src="assets/js/app.js"></script>
+
+  <script src="~/assets/pages/datatables.init.js"></script>*@
+
+@*<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+
+
+@*@section Scripts {*@
+
+@*<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+
+    $('#autoTeam').autocomplete({
+
+      source: '/api/AssignMentor/SearchTeam',
+      select: function (event, ui) {
+
+        var tag = ui.item.value;
+
+        var AutoCus = {
+          Name: ui.item.value,
+          QuoteId: $("#Id").val()
+
+        };
+
+        console.log(AutoCus);
+
+        //$.ajax({
+        //  type: "POST",
+        //  url: "/Invoice/GetCustomer",
+        //  data: JSON.stringify(AutoCus),
+        //  dataType: "json",
+        //  contentType: 'application/json; charset=utf-8',
+        //  headers: {
+        //    RequestVerificationToken:
+        //      $('input:hidden[name="__RequestVerificationToken"]').val()
+        //  },
+        //  success: function (r) {
+
+        //    document.getElementById("cusAddress").value = r.city + "\n" + r.email + "\n" + r.phone;
+        //    document.getElementById("cusId").value = r.Id;
+
+        //  },
+        //  error: function () {
+        //    alert("Error occured!!")
+        //  }
+        //});
+
+
+      }
+
+    });
+
+
+    //$("#submitMentor").click(function (event) {
+
+    //  event.preventDefault();
+
+    //  var PostMentor = {
+    //    FirstName: $("#FirstName").val(),
+    //    LastName: $("#LastName").val(),
+    //    NickName: $("#NickName").val(),
+    //    Email: $("#Email").val(),
+    //    PhoneNumberMobile: $("#PhoneNumberMobile").val(),
+    //    PhoneNumberWork: $("#PhoneNumberWork").val(),
+    //    Address: $("#Address").val(),
+    //    City: $("#City").val(),
+    //    Province: $("#Province").val(),
+    //    Country: $("#Country").val(),
+    //    Industry: $("#Industry").val(),
+    //    Expertise: $("#Expertise").val(),
+    //    Interest: $("#Interest").val(),
+    //    Profile: $("#Profile").val(),
+    //  };
+
+
+    //  console.log(PostMentor);
+
+    //  $.ajax({
+    //    type: "POST",
+    //    url: "/Mentors/AddMentor",
+    //    data: JSON.stringify(PostMentor),
+    //    dataType: "json",
+    //    contentType: 'application/json; charset=utf-8',
+    //    headers: {
+    //      RequestVerificationToken:
+    //        $('input:hidden[name="__RequestVerificationToken"]').val()
+    //    },
+    //    success: function (r) {
+
+    //      if (r.msg == "Success") {
+
+    //        window.location.reload();
+
+    //      } else if (r.msg == "Fail") {
+
+    //        alert(r.msg);
+
+    //      } else if (r.msg == "No Data") {
+    //        alert(r.msg);
+
+    //      } else {
+    //        alert(r.msg);
+    //      }
+    //      //alert(r.msg);
+    //      // window.location.reload();
+
+    //    },
+    //    error: function () {
+    //      alert(r.msg);
+    //    }
+    //  });
+    //});
+  });
+
+</script>
+
+
+@*}*@

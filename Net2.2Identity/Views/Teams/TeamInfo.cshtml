@@ -1,306 +1,338 @@
-﻿
+﻿@model TME.ViewModel.TeamInfoViewModel
+
 @{
-    ViewData["Title"] = "TeamInfo";
+  ViewData["Title"] = "TeamInfo";
 }
 
 
 <style>
-    .modal-lg {
-        max-width: 40% !important;
-    }
+  .modal-lg {
+    max-width: 40% !important;
+  }
 </style>
 
 
 
 
 <div id="wrapper">
-    <!-- Top Bar Start -->
-    <!-- ============================================================== -->
-    @await Html.PartialAsync("_LayoutHeader")
-    <!-- Start right Content here -->
-    <!-- ============================================================== -->
-    <div class="content-page">
-        <!-- Start content -->
-        <div class="content">
+  <!-- Top Bar Start -->
+  <!-- ============================================================== -->
+  @await Html.PartialAsync("_LayoutHeader")
+  <!-- Start right Content here -->
+  <!-- ============================================================== -->
+  <div class="content-page">
+    <!-- Start content -->
+    <div class="content">
 
-          <div class="container-fluid">
-            <div class="page-title-box">
-              <div class="row align-items-center">
-                <div class="col-sm-6">
-                  <h4 class="page-title">Data Table</h4>
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0);">Team</a></li>
-                    <li class="breadcrumb-item active">Team Info.</li>
-                  </ol>
-                </div>
-                <div class="col-sm-6">
-                  <div class="float-right d-none d-md-block">
-                    <div class="dropdown">
-                      
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item"
-                           href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Separated link</a>
-                      </div>
-                    </div>
+      <div class="container-fluid">
+        <div class="page-title-box">
+          <div class="row align-items-center">
+            <div class="col-sm-6">
+              <h4 class="page-title">Team Info</h4>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item"><a asp-controller="Teams" asp-action="Index">Team</a></li>
+                <li class="breadcrumb-item active">Team Info.</li>
+              </ol>
+            </div>
+            <div class="col-sm-6">
+              <div class="float-right d-none d-md-block">
+                <div class="dropdown">
+
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item"
+                       href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Separated link</a>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- end row -->
-            <!-- Begining of the modal-->
-            <!--  Modal content for the above example -->
-            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
-                 aria-labelledby="myLargeModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title mt-0" id="myLargeModalLabel">
-                      Add Team
-                    </h5><button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                      ×
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="container-fluid">
-                      <div class="row">
-                        <div class="col-md-12">
-                            <div class="row ">
-                                <div class="form-group col-md-4">
-                                    <label>First Name*</label>
-                                    <input type="text" class="colorpicker-default form-control" placeholder="First Name">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label>Last Name*</label>
-                                    <input type="text" class="colorpicker-default form-control" placeholder="Last Name">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label>Nick Name*</label>
-                                    <input type="text" class="colorpicker-default form-control" placeholder="Nick name">
-                                </div>
-                            </div>
-
-                            <div class="row ">
-                                <div class="form-group col-md-4">
-                                    <label>Email*</label>
-                                    <input type="email" class="colorpicker-default form-control" placeholder="name@sample.com">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label>Phone Number*</label>
-                                    <input type="text" class="colorpicker-default form-control" placeholder="Primary (mobile)">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label>Mobile Number*</label>
-                                    <input type="text" class="colorpicker-default form-control" placeholder="Secondary (Work)">
-                                </div>
-                            </div>
-                            <div class="row ">
-                                <div class="form-group col-md-12">
-                                    <label> Address*</label>
-                                    <textarea type="text" class="colorpicker-default form-control" placeholder="Enter your Address..."></textarea>
-                                </div>
-                            </div>
-
-                          <div class="row ">
-                            <div class="form-group col-md-4">
-                              <label>City*</label>
-                              <input type="text" class="colorpicker-default form-control" placeholder="City">
-                            </div>
-                            <div class="form-group col-md-4">
-                              <label>Province*</label>
-                              <input type="text" class="colorpicker-default form-control" placeholder="Province">
-                            </div>
-                            <div class="form-group col-md-4">
-                              <label>Country*</label>
-                              <input type="text" class="colorpicker-default form-control" placeholder="E.g Embedded Systems Startups">
-                            </div>
+          </div>
+        </div>
+        <!-- end row -->
+        <!-- Begining of the modal-->
+        <!--  Modal content for the above example -->
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+             aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">
+                  Add Team Member
+                </h5><button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  ×
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="row ">
+                          <div class="form-group col-md-4">
+                            <label>First Name*</label>
+                            <input type="text" id="FirstName" name="FirstName" class="colorpicker-default form-control" placeholder="First Name">
                           </div>
-                          <div class="row ">
-                              <div class="form-group col-md-3">
-                                  <label>Assign Teams</label>
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                      <label class="form-check-label" for="defaultCheck1">
-                                          Student
-                                      </label>
-                                  </div>
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                      <label class="form-check-label" for="defaultCheck1">
-                                          Alumni
-                                      </label>
-                                  </div>
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                      <label class="form-check-label" for="defaultCheck1">
-                                          Other
-                                      </label>
-                                  </div>
-                              </div>
-                              
+                          <div class="form-group col-md-4">
+                            <label>Last Name*</label>
+                            <input type="text" id="LastName" name="LastName" class="colorpicker-default form-control" placeholder="Last Name">
                           </div>
-                          
+                          <div class="form-group col-md-4">
+                            <label>Nick Name</label>
+                            <input type="text" id="NickName" name="NickName" class="colorpicker-default form-control" placeholder="Nick name">
+                          </div>
                         </div>
-                        
 
+                        <div class="row ">
+                          <div class="form-group col-md-4">
+                            <label>Email*</label>
+                            <input type="email" id="Email" name="Email" class="colorpicker-default form-control" placeholder="name@sample.com">
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label>Phone Number*</label>
+                            <input type="text" id="PhoneNumberMobile" name="PhoneNumberMobile" class="colorpicker-default form-control" placeholder="Primary (mobile)">
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label>Phone Number 2</label>
+                            <input type="text" id="PhoneNumberWork" name="PhoneNumberWork" class="colorpicker-default form-control" placeholder="Secondary (Work)">
+                          </div>
+                        </div>
+                        <div class="row ">
+                          <div class="form-group col-md-12">
+                            <label> Address*</label>
+                            <textarea type="text" id="Address" name="Address" class="colorpicker-default form-control" placeholder="Enter your Address..."></textarea>
+                          </div>
+                        </div>
+
+                        <div class="row ">
+                          <div class="form-group col-md-4">
+                            <label>City*</label>
+                            <input type="text" id="City" name="City" class="colorpicker-default form-control" placeholder="City">
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label>Province*</label>
+                            <input type="text" id="Province" name="Province" class="colorpicker-default form-control" placeholder="Province">
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label>Country*</label>
+                            <input type="text" id="Country" name="Country" class="colorpicker-default form-control" placeholder="E.g Embedded Systems Startups">
+                          </div>
+                        </div>
+                        <div class="row ">
+                          <div class="form-group col-md-3">
+                            <label>Assign Teams</label>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="Student" name="Student">
+                              <label class="form-check-label" for="defaultCheck1">
+                                Student
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="Alumni" name="Alumni">
+                              <label class="form-check-label" for="defaultCheck1">
+                                Alumni
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="Other" name="Other">
+                              <label class="form-check-label" for="defaultCheck1">
+                                Other
+                              </label>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" id="submitMember" name="submitMember" class="btn btn-primary">Add Member</button>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- End of the Modal-->
+        <!-- end row -->
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-header body-card">
+                  <div class="row col-md-12">
+                    <div class="col-md-10">
+                      <div class="card-title">
+
+                        <input hidden id="TeamId" name="TeamId" asp-for="Team.Id" />
+                        <div class="form-group col-md-6">
+                          <label>Venture</label>
+                          <input type="text" asp-for="Team.VentureName" class="colorpicker-default form-control" readonly placeholder="Vendors">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label>Industry</label>
+                          <input type="text" asp-for="Team.Industry" class="colorpicker-default form-control" readonly placeholder="Industries">
+                        </div>
+
+
+
+                      </div>
+                      <div class="col-md-2">
+                        <button class="btn btn-primary pull-right " data-toggle="modal" data-target=".bs-example-modal-lg" aria-expanded="false">
+                          + Add Members
+                        </button>
                       </div>
                     </div>
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Add Team </button>
-                  </div>
-                </div><!-- /.modal-content -->
-              </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
-
-
-            <!-- End of the Modal-->
-            <!-- end row -->
-            <div class="row">
-              <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-header body-card">
-                            <div class="row col-md-12">
-                                <div class="col-md-10">
-                                    <div class="card-title">
-                                        <div class="form-group col-md-4">
-                                            <label></label>
-                                            <input type="text" class="colorpicker-default form-control" readonly placeholder="Vendors">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label></label>
-                                            <input type="text" class="colorpicker-default form-control" readonly placeholder="Industrries">
-                                        </div>
-                                       
-                                   
-
-                                    </div>
-                                    <div class="col-md-2">
-                                        <button class="btn btn-primary pull-right " data-toggle="modal" data-target=".bs-example-modal-lg" aria-expanded="false">                                           
-                                            + Assign Team
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-          
-   
-                        <table class="table table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                </tr>
-                                <tr>
-                                    <td>Garrett Winters</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>63</td>
-                                    <td>2011/07/25</td>
-                                    <td>$170,750</td>
-                                </tr>
-                              
-
-                                <tr>
-                                    <td>Sonya Frost</td>
-                                    <td>Software Engineer</td>
-                                    <td>Edinburgh</td>
-                                    <td>23</td>
-                                    <td>2008/12/13</td>
-                                    <td>$103,600</td>
-                                </tr>
-                                <tr>
-                                    <td>Jena Gaines</td>
-                                    <td>Office Manager</td>
-                                    <td>London</td>
-                                    <td>30</td>
-                                    <td>2008/12/19</td>
-                                    <td>$90,560</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Gloria Little</td>
-                                    <td>Systems Administrator</td>
-                                    <td>New York</td>
-                                    <td>59</td>
-                                    <td>2009/04/10</td>
-                                    <td>$237,500</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Fiona Green</td>
-                                    <td>Chief Operating Officer (COO)</td>
-                                    <td>San Francisco</td>
-                                    <td>48</td>
-                                    <td>2010/03/11</td>
-                                    <td>$850,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Shou Itou</td>
-                                    <td>Regional Marketing</td>
-                                    <td>Tokyo</td>
-                                    <td>20</td>
-                                    <td>2011/08/14</td>
-                                    <td>$163,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Michelle House</td>
-                                    <td>Integration Specialist</td>
-                                    <td>Sidney</td>
-                                    <td>37</td>
-                                    <td>2011/06/02</td>
-                                    <td>$95,400</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
-              </div><!-- end col -->
+
+
+
+                <div class="row">
+                  <h6 class="page-title" style="padding-left:20px">Team Members</h6>
+                </div>
+
+                <table class="table table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Phone Number</th>
+                      <th>Country</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    @foreach (var item in Model.TeamMember)
+                    {
+                      <tr>
+                        <td>@item.FirstName @item.LastName</td>
+                        <td>@item.Email</td>
+                        <td>@item.PhoneNumberMobile</td>
+                        <td>@item.Country</td>
+                        <td>
+                          <a asp-action="#" class="btn btn-info">View</a> |
+                          <a asp-action="#" class="btn btn-warning">Edit</a> |
+                          <a asp-action="#" class="btn btn-danger">Delete</a>
+                        </td>
+                      </tr>
+                    }
+
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <!-- end row -->
-          </div><!-- container-fluid -->
+          </div><!-- end col -->
         </div>
+        <!-- end row -->
+      </div><!-- container-fluid -->
     </div>
+  </div>
 </div>
 
 
 <!-- jQuery  -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/metisMenu.min.js"></script>
-<script src="assets/js/jquery.slimscroll.js"></script>
-<script src="assets/js/waves.min.js"></script><!-- Required datatable js -->
-<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../plugins/datatables/dataTables.bootstrap4.min.js"></script><!-- Buttons examples -->
-<script src="../plugins/datatables/dataTables.buttons.min.js"></script>
-<script src="../plugins/datatables/buttons.bootstrap4.min.js"></script>
-<script src="../plugins/datatables/jszip.min.js"></script>
-<script src="../plugins/datatables/pdfmake.min.js"></script>
-<script src="../plugins/datatables/vfs_fonts.js"></script>
-<script src="../plugins/datatables/buttons.html5.min.js"></script>
-<script src="../plugins/datatables/buttons.print.min.js"></script>
-<script src="../plugins/datatables/buttons.colVis.min.js"></script><!-- Responsive examples -->
-<script src="../plugins/datatables/dataTables.responsive.min.js"></script>
-<script src="../plugins/datatables/responsive.bootstrap4.min.js"></script><!-- Datatable init js -->
-<script src="assets/pages/datatables.init.js"></script><!-- App js -->
+<script src="~/assets/js/jquery.min.js"></script>
+<script src="~/assets/js/metisMenu.min.js"></script>
+<script src="~/assets/js/jquery.slimscroll.js"></script>
+<script src="~/assets/js/waves.min.js"></script>
+
+
+
+<script src="~/plugins/chartist/js/chartist.min.js"></script>
+<script src="~/plugins/chartist/js/chartist-plugin-tooltip.min.js"></script><!-- peity JS -->
+<script src="~/plugins/peity-chart/jquery.peity.min.js"></script>
+<script src="~/assets/pages/dashboard.js"></script><!-- App js -->
+<script src="~/assets/js/app.js"></script>
+
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script><!-- Buttons examples -->
+<script src="~/plugins/datatables/dataTables.buttons.min.js"></script>
+<script src="~/plugins/datatables/buttons.bootstrap4.min.js"></script>
+<script src="~/plugins/datatables/jszip.min.js"></script>
+<script src="~/plugins/datatables/pdfmake.min.js"></script>
+<script src="~/plugins/datatables/vfs_fonts.js"></script>
+<script src="~/plugins/datatables/buttons.html5.min.js"></script>
+<script src="~/plugins/datatables/buttons.print.min.js"></script>
+<script src="~/plugins/datatables/buttons.colVis.min.js"></script><!-- Responsive examples -->
+<script src="~/plugins/datatables/dataTables.responsive.min.js"></script>
+<script src="~/plugins/datatables/responsive.bootstrap4.min.js"></script><!-- Datatable init js -->
 <script src="assets/js/app.js"></script>
 
+<script src="~/assets/pages/datatables.init.js"></script>
 
+
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+
+    $("#submitMember").click(function (event) {
+
+      event.preventDefault();
+
+      var PostMember = {
+        TeamId: $("#TeamId").val(),
+        FirstName: $("#FirstName").val(),
+        NickName: $("#NickName").val(),
+        LastName: $("#LastName").val(),
+        Email: $("#Email").val(),
+        PhoneNumberMobile: $("#PhoneNumberMobile").val(),
+        PhoneNumberWork: $("#PhoneNumberWork").val(),
+        Address: $("#Address").val(),
+        City: $("#City").val(),
+        Province: $("#Province").val(),
+        Country: $("#Country").val(),
+        Student: $("#Student").val(),
+        Alumni: $("#Alumni").val(),
+        Other: $("#Other").val(),
+      };
+
+
+      console.log(PostMember);
+
+      $.ajax({
+        type: "POST",
+        url: "/Teams/AddMembers",
+        data: JSON.stringify(PostMember),
+        dataType: "json",
+        contentType: 'application/json; charset=utf-8',
+        headers: {
+          RequestVerificationToken:
+            $('input:hidden[name="__RequestVerificationToken"]').val()
+        },
+        success: function (r) {
+
+          if (r.msg == "Success") {
+
+            window.location.reload();
+
+          } else if (r.msg == "Fail") {
+
+            alert(r.msg);
+
+          } else if (r.msg == "No Data") {
+            alert(r.msg);
+
+          } else {
+            alert(r.msg);
+          }
+          //alert(r.msg);
+          // window.location.reload();
+
+        },
+        error: function () {
+          alert(r.msg);
+        }
+      });
+    });
+  });
+
+</script>

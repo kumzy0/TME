@@ -150,7 +150,7 @@
                       <td>@item.Industry</td>
                       <td>0</td>
                       <td>@item.DateCreated.ToString("MMM dd, yyyy")</td>
-                      <td><button type="button" class="btn btn-primary" id="myModal2">View Info</button></td>
+                      <td><a asp-action="TeamInfo" class="btn btn-primary" asp-route-id="@item.Id">View Info</a></td>
                     </tr>
 
                     }
