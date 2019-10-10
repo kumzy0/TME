@@ -1,130 +1,150 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+  ViewData["Title"] = "Home Page";
 }
 
 
 
 <style>
-    .body {
-        background-image: url('../../wwwroot/images/waterfall.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-    }
+  .body {
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
-    .mdi mdi-account-supervisor {
-        width: 80px !important;
-        height: 80px  !important;
-    }
+  .mdi mdi-account-supervisor {
+    width: 80px !important;
+    height: 80px !important;
+  }
 
-    .mdi mdi-account-group {
-        width: 80px !important;
-        height: 80px !important;
-    }
+  .mdi mdi-account-group {
+    width: 80px !important;
+    height: 80px !important;
+  }
 
-    .mdi mdi-account-switch m-b-1 {
-        width: 80px !important;
-        height: 80px !important;
-    }
-
+  .mdi mdi-account-switch m-b-1 {
+    width: 80px !important;
+    height: 80px !important;
+  }
 </style>
 
 <div class="body">
-    <div id="wrapper" class="mainbg">
-        <!-- Top Bar Start -->
-        <!-- ============================================================== -->
-        @await Html.PartialAsync("_LayoutHeader")
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
-        <div class="home-btn d-none d-sm-block">
-            <a href="index.html" class="text-dark"><i class="fas fa-home h2"></i></a>
-        </div>
-        <section class="mt-5 mb-5">
-            <div class="container-alt container">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <div class="home-wrapper m-t-40">
-                            @*<div class="mb-4"><img src="assets/images/logo-dark.png" alt="logo" height="30"></div>
-                                <div class="maintenance-img">
-                                    <img src="assets/images/maintenance.png" alt="" class="img-fluid mx-auto d-block">
-                                </div>*@
-                            <h3 class="m-t-30">Welcome Super User</h3>
-                            <p>Please check back in sometime.</p>
-                            <div class="row">
-                                <div class="text-center col-md-6">
-                                    <div class="card mt-4 maintenance-box">
-                                        <div class="card-body">
-                                            <i class="mdi mdi-account-supervisor mdi-48px m-b-15"></i>
-                                            <h6 class="text-uppercase">Mentors</h6>
-                                            <p class="text-muted m-t-20">
-                                                There are many variations of passages of Lorem
-                                                Ipsum available, but the majority have suffered alteration.
-                                            </p>
-                                            <a asp-controller="Mentors" asp-action="Index" class="btn btn-primary waves-effect waves-light">
-                                                <h6><sup></sup>Mentors<span class="font-16"></span></h6>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-center col-md-6">
-                                    <div class="card mt-4 maintenance-box">
-                                        <div class="card-body">
-                                            <i class="mdi mdi-account-group mdi-48px m-b-15"></i>
-                                            <h6 class="text-uppercase">Teams</h6>
-                                            <p class="text-muted m-t-20">
-                                                Contrary to popular belief, Lorem Ipsum is not
-                                                simply random text. It has roots in a piece of classical.
-                                            </p>
-                                            <a asp-controller="Teams" asp-action="Index" class="btn-sm btn-primary waves-effect waves-light">
-                                                <h6><sup></sup>Teams<span class="font-16"></span></h6>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- end row -->
-                            <div class="row">
-                                <div class="text-center col-md-6">
-                                    <div class="card mt-4 maintenance-box">
-                                        <div class="card-body">
-                                            <i class="mdi mdi-account-switch mdi-48px m-b-15"></i>
-                                            <h6 class="text-uppercase">Assign Mentors</h6>
-                                            <p class="text-muted m-t-20">
-                                                There are many variations of passages of Lorem
-                                                Ipsum available, but the majority have suffered alteration.
-                                            </p>
-                                            <a asp-controller="AssignMentors" asp-action="Index" class="btn-sm btn-primary waves-effect waves-light">
-                                                <h6><sup></sup>Assign Mentors<span></span></h6>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-center col-md-6">
-                                    <div class="card mt-4 maintenance-box">
-                                        <div class="card-body">
-                                            <i class="mdi mdi-account-details mdi-48px m-b-15"></i>
-                                            <h6 class="text-uppercase">Manage Users</h6>
-                                            <p class="text-muted m-t-20">
-                                                If you are going to use a passage of Lorem Ipsum,
-                                                you need to be sure there isn't anything embar.. <a href="mailto:no-reply@domain.com" class="text-decoration-underline">no-reply@domain.com</a>
-                                            </p>
-                                            <a asp-controller="ManagerUsers" asp-action="Index" class="btn-sm btn-primary  waves-effect waves-light">
-                                                <h6><sup></sup>Manage Users<span class="font-16"></span></h6>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section><!-- jQuery  -->
+  <div id="wrapper" class="mainbg">
+    <!-- Top Bar Start -->
+    <!-- ============================================================== -->
+    @await Html.PartialAsync("_LayoutHeader")
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="home-btn d-none d-sm-block">
+      <a href="index.html" class="text-dark"><i class="fas fa-home h2"></i></a>
     </div>
+    <section class="mt-5 mb-5" style="background:url(/img/Picture1.png)">
+      <div class="container-alt container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <div class="home-wrapper m-t-40">
+              @*<div class="mb-4"><img src="assets/images/logo-dark.png" alt="logo" height="30"></div>
+                <div class="maintenance-img">
+                    <img src="assets/images/maintenance.png" alt="" class="img-fluid mx-auto d-block">
+                </div>*@
+              <h3 class="m-t-30">Welcome User</h3>
+              @*<p>Please check back in sometime.</p>*@
+              <div class="row">
+                <div class="text-center col-md-6">
+                  <div class="card mt-4 maintenance-box">
+                    <div class="card-body">
+                      <i class="mdi mdi-account-supervisor mdi-48px m-b-15"></i>
+                      <h6 class="text-uppercase">Mentors</h6>
+                      @*<p class="text-muted m-t-20">
+                        There are many variations of passages of Lorem
+                        Ipsum available, but the majority have suffered alteration.
+                      </p>*@
+                      <a asp-controller="Mentors" asp-action="Index" class="btn btn-primary waves-effect waves-light">
+                        <h6><sup></sup>Mentors<span class="font-16"></span></h6>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center col-md-6">
+                  <div class="card mt-4 maintenance-box">
+                    <div class="card-body">
+                      <i class="mdi mdi-account-group mdi-48px m-b-15"></i>
+                      <h6 class="text-uppercase">Teams</h6>
+                      @*<p class="text-muted m-t-20">
+                        Contrary to popular belief, Lorem Ipsum is not
+                        simply random text. It has roots in a piece of classical.
+                      </p>*@
+                      <a asp-controller="Teams" asp-action="Index" class="btn-sm btn-primary waves-effect waves-light">
+                        <h6><sup></sup>Teams<span class="font-16"></span></h6>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- end row -->
+              <div class="row">
+                <div class="text-center col-md-6">
+                  <div class="card mt-4 maintenance-box">
+                    <div class="card-body">
+                      <i class="mdi mdi-account-switch mdi-48px m-b-15"></i>
+                      <h6 class="text-uppercase">Assign Mentors</h6>
+                      @*<p class="text-muted m-t-20">
+                        There are many variations of passages of Lorem
+                        Ipsum available, but the majority have suffered alteration.
+                      </p>*@
+                      <a asp-controller="AssignMentors" asp-action="Index" class="btn-sm btn-primary waves-effect waves-light">
+                        <h6><sup></sup>Assign Mentors<span></span></h6>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center col-md-6">
+                  <div class="card mt-4 maintenance-box">
+                    <div class="card-body">
+                      <i class="mdi mdi-account-details mdi-48px m-b-15"></i>
+                      <h6 class="text-uppercase">Manage Users</h6>
+                      @*<p class="text-muted m-t-20">
+                        If you are going to use a passage of Lorem Ipsum,
+                        you need to be sure there isn't anything embar.. <a href="mailto:no-reply@domain.com" class="text-decoration-underline">no-reply@domain.com</a>
+                      </p>*@
+                      <a asp-controller="ManagerUsers" asp-action="Index" class="btn-sm btn-primary  waves-effect waves-light">
+                        <h6><sup></sup>Manage Users<span class="font-16"></span></h6>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- jQuery  -->
+  </div>
 </div>
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/metisMenu.min.js"></script>
-<script src="assets/js/jquery.slimscroll.js"></script>
-<script src="assets/js/waves.min.js"></script><!-- App js -->
+<!-- jQuery  -->
+<script src="~/assets/js/jquery.min.js"></script>
+<script src="~/assets/js/metisMenu.min.js"></script>
+<script src="~/assets/js/jquery.slimscroll.js"></script>
+<script src="~/assets/js/waves.min.js"></script>
+
+<script src="~/plugins/chartist/js/chartist.min.js"></script>
+<script src="~/plugins/chartist/js/chartist-plugin-tooltip.min.js"></script><!-- peity JS -->
+<script src="~/plugins/peity-chart/jquery.peity.min.js"></script>
+<script src="~/assets/pages/dashboard.js"></script><!-- App js -->
+<script src="~/assets/js/app.js"></script>
+
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script><!-- Buttons examples -->
+<script src="~/plugins/datatables/dataTables.buttons.min.js"></script>
+<script src="~/plugins/datatables/buttons.bootstrap4.min.js"></script>
+<script src="~/plugins/datatables/jszip.min.js"></script>
+<script src="~/plugins/datatables/pdfmake.min.js"></script>
+<script src="~/plugins/datatables/vfs_fonts.js"></script>
+<script src="~/plugins/datatables/buttons.html5.min.js"></script>
+<script src="~/plugins/datatables/buttons.print.min.js"></script>
+<script src="~/plugins/datatables/buttons.colVis.min.js"></script><!-- Responsive examples -->
+<script src="~/plugins/datatables/dataTables.responsive.min.js"></script>
+<script src="~/plugins/datatables/responsive.bootstrap4.min.js"></script><!-- Datatable init js -->
 <script src="assets/js/app.js"></script>
+
+<script src="~/assets/pages/datatables.init.js"></script>
+
 

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Net2._2Identity.Data;
 
 namespace Net2._2Identity.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191005071401_assignment")]
+    partial class assignment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -301,8 +303,6 @@ namespace Net2._2Identity.Data.Migrations
 
                     b.Property<string>("FullName");
 
-                    b.Property<string>("ImageUrl");
-
                     b.Property<string>("Industry");
 
                     b.Property<string>("Interest");
@@ -322,8 +322,6 @@ namespace Net2._2Identity.Data.Migrations
                     b.Property<string>("PhoneNumberWork");
 
                     b.Property<string>("Profile");
-
-                    b.Property<string>("ProfileUrl");
 
                     b.Property<string>("Province");
 

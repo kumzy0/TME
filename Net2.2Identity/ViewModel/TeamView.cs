@@ -6,11 +6,9 @@ using TME.Models;
 
 namespace TME.ViewModel
 {
-  public class TeamInfoViewModel
+  public class TeamView
   {
     public Team Team { get; set; }
-    public List<Member> TeamMember { get; set; }
-    public List<Assignment> Assignments { get; set; }
-
+    public int TeamMember { get; set; }
   }
 }

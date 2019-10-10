@@ -9,5 +9,8 @@ namespace Net2._2Identity.Models
     // Add profile data for application users by adding properties to the ApplicationUser class
     public class ApplicationUser : IdentityUser
     {
+      public string FullName { get; set; }
+    public string Status { get; set; }
+    public string UserRole { get; set; }
     }
 }

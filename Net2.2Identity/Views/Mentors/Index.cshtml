@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<TME.Models.Mentor>
 @{
-    ViewData["Title"] = "Index";
+  ViewData["Title"] = "Mentor";
 }
 
 <style>
@@ -66,48 +66,59 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form>
+                <form enctype="multipart/form-data" asp-action="AddMentor" method="post">
 
                   <div class="container-fluid">
                     <div class="row">
                       <div class="col-md-12">
 
-                        <div class="row ">
-                          <div class="form-group col-md-4">
-                            <label>First Name*</label>
-                            <input type="text" required id="FirstName" name="FirstName" class="colorpicker-default form-control" placeholder="Firstname">
+                        <div class="row">
+                          <div class="col-md-9">
+                            <div class="row ">
+                              <div class="form-group col-md-4">
+                                <label>First Name*</label>
+                                <input type="text" required id="FirstName" name="FirstName" class="colorpicker-default form-control" placeholder="Firstname">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label>Last Name*</label>
+                                <input type="text" required id="LastName" name="LastName" class="colorpicker-default form-control" placeholder="Lastname">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label>Nick Name</label>
+                                <input type="text" id="NickName" name="NickName" class="colorpicker-default form-control" placeholder="Nick Name">
+                              </div>
+                            </div>
+
+                            <div class="row ">
+                              <div class="form-group col-md-4">
+                                <label>Email*</label>
+                                <input type="email" required id="Email" name="Email" class="colorpicker-default form-control" placeholder="email@website.com">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label>Phone Number 1*</label>
+                                <input type="text" required id="PhoneNumberMobile" name="PhoneNumberMobile" class="colorpicker-default form-control" placeholder="Primary (mobile)">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label>Phone Number 2</label>
+                                <input type="text" id="PhoneNumberWork" name="PhoneNumberWork" class="colorpicker-default form-control" placeholder="Secondary (work)">
+                              </div>
+                            </div>
+
+                            <div class="row ">
+                              <div class="form-group col-md-12">
+                                <label> Address*</label>
+                                <input type="text" required id="Address" name="Address" class="colorpicker-default form-control" placeholder="Street No & Name" />
+                              </div>
+                            </div>
+
                           </div>
-                          <div class="form-group col-md-4">
-                            <label>Last Name*</label>
-                            <input type="text" required id="LastName" name="LastName" class="colorpicker-default form-control" placeholder="Lastname">
-                          </div>
-                          <div class="form-group col-md-4">
-                            <label>Nick Name</label>
-                            <input type="text" id="NickName" name="NickName" class="colorpicker-default form-control" placeholder="Nick Name">
+                          <div class="col-md-3 ">
+                            <label> Headshot</label>
+                            <div class="fallback dropzone"><input name="file" type="file" multiple="multiple"></div>
+
                           </div>
                         </div>
 
-                        <div class="row ">
-                          <div class="form-group col-md-4">
-                            <label>Email*</label>
-                            <input type="email" required id="Email" name="Email" class="colorpicker-default form-control" placeholder="email@website.com">
-                          </div>
-                          <div class="form-group col-md-4">
-                            <label>Phone Number 1*</label>
-                            <input type="text" required id="PhoneNumberMobile" name="PhoneNumberMobile" class="colorpicker-default form-control" placeholder="Primary (mobile)">
-                          </div>
-                          <div class="form-group col-md-4">
-                            <label>Phone Number 2</label>
-                            <input type="text" id="PhoneNumberWork" name="PhoneNumberWork" class="colorpicker-default form-control" placeholder="Secondary (work)">
-                          </div>
-                        </div>
-
-                        <div class="row ">
-                          <div class="form-group col-md-12">
-                            <label> Address*</label>
-                            <input type="text" required id="Address" name="Address" class="colorpicker-default form-control" placeholder="Street No & Name" />
-                          </div>
-                        </div>
 
                         <div class="row ">
                           <div class="form-group col-md-4">
@@ -145,86 +156,24 @@
                             <textarea type="text" id="Profile" name="Profile" class="colorpicker-default form-control" placeholder="Brief Profile"></textarea>
                           </div>
                           <div class="form-group col-md-4">
+                            <label>Upload Profile</label>
+                            <input type="file" class="form-control-file" name="resume" id="resume">
                           </div>
                         </div>
 
-                        @*<div class="row ">
-                            <div class="form-group col-md-3">
-                              <label>Assign Teams</label>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                  Team A
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                  Team B
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                  Team C
-                                </label>
-                              </div>
-                            </div>
-                            <div class="form-group col-md-3">
-                              <label></label>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                  Team D
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                  Team E
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                  Team F
-                                </label>
-                              </div>
-
-                            </div>
-                          </div>*@
                       </div>
 
 
-                      @*<div class="col-md-3">
-                          <div class="row">
-                            <div class="form-group col-md-2">
-                              <div class="col-md-2 ml-auto">
-                                <img src="~/images/passportphoto.jpg" />
-                              </div>
-
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="form-group col-md-2">
-                              <div class="col-md-2 ml-auto">
-                                <label>Attachments</label>
-                                <p><u>Profile.docx</u></p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>*@
 
                     </div>
                   </div>
 
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button id="submitMentor" name="submitMentor" type="button" class="btn btn-primary" data-dismiss="modal">Add Mentor</button>
+                    <button type="submit" class="btn btn-primary" >Add Mentor</button>
                   </div>
                 </form>
-
+                @*id="submitMentor" name="submitMentor"*@
               </div>
 
             </div><!-- /.modal-content -->
@@ -245,16 +194,29 @@
                         <h4 class="mt-0 header-title m-b-20"></h4>
                         <form class="repeater" enctype="multipart/form-data">
                           <div data-repeater-list="group-a">
-                            <div data-repeater-item class="row">
-                              <div class="form-group col-lg-4"></div>
-                              <div class="form-group col-lg-4">
-                                <label for=""></label> <input type="text" id="name" placeholder=" To search - type namee or email and press Enter ..." class="form-control">
-                              </div>
+                            @*<div data-repeater-item class="row">
+                                          <div class="form-group col-lg-3"></div>
+                                          <div class="form-group col-lg-6">
+                                            <label for=""></label> <input type="text" id="name" placeholder=" To search - type namee or email and press Enter ..." class="form-control">
+                                          </div>
 
-                              @*<div class="col-lg-1 align-self-center">
-                                    <input data-repeater-delete type="button" class="btn btn-primary btn-block" value="Search">
-                                </div>*@
+
+                                          @*<div class="col-lg-1 align-self-center">
+                      <input data-repeater-delete type="button" class="btn btn-primary btn-block" value="Search">
+                  </div>
+                                        </div>*@
+
+                            <div class="dropdown pt-3 d-inline-block">
+                              <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</a>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <button class="dropdown-item" id="sendMailList" name="sendMailList" type="button">Send Email</button>
+                                <button class="dropdown-item" id="setActive" name="setActive" type="button">Set as Active</button>
+                                <button class="dropdown-item" id="setInactive" name="setInactive" type="button">Set as Inactive</button>
+                                <div class="dropdown-divider"></div>
+                                <button class="dropdown-item" id="delete" name="delete" type="button">Delete</button>
+                              </div>
                             </div>
+
                           </div>
                         </form>
                       </div>
@@ -262,26 +224,30 @@
                   </div>
                 </div><!-- end row -->
                 @*<p class="text-muted m-b-30">
-                      DataTables has most features enabled by default, so all
-                      you need to do to use it with your own tables is to call the construction
-                      function: <code>$().DataTable();</code>.
-                  </p>*@
+          DataTables has most features enabled by default, so all
+          you need to do to use it with your own tables is to call the construction
+          function: <code>$().DataTable();</code>.
+      </p>*@
                 <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap"
                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                   <thead>
                     <tr>
+                      <th><input type="checkbox" id="checkBoxAll" class="custom-checkbox" /></th>
                       <th>First Name</th>
                       <th>Last Name</th>
                       <th>Cell</th>
                       <th>Email</th>
                       <th>Status</th>
                       <th>Date Added</th>
+                      <th>View Details</th>
+
                     </tr>
                   </thead>
                   <tbody>
                     @foreach (var item in Model)
                     {
                     <tr>
+                      <td><input type="checkbox" name="@item.Email" value="@item.Id" class="custom-checkbox chkCheckBoxId" /></td>
                       <td>@item.FirstName</td>
                       <td>@item.LastName</td>
                       <td>@item.PhoneNumberMobile</td>
@@ -297,11 +263,164 @@
                           }
                       </td>
                       <td>@item.DateCreated.ToString("MMM dd, yyyy")</td>
+                      <td><btn name="viewProfile" id="viewProfile" class="btn btn-primary"  data-toggle="modal" data-target=".bs-example-modal-lg2" 
+                               
+                               sFirst="@item.FirstName" 
+                               sProfileURl="@item.ProfileUrl"
+                               sImageUrl="@item.ImageUrl"
+                               sLastName="@item.LastName"
+                               sOtherName="@item.OtherName"
+                               sNickName="@item.NickName"
+                               sEmail="@item.Email"
+                               sPhoneNumberMobile="@item.PhoneNumberMobile"
+                               sPhoneNumberWork="@item.PhoneNumberWork"
+                               sAddress="@item.Address"
+                               sCity="@item.City"
+                               sProvince="@item.Province"
+                               sCountry="@item.Country"
+                               sIndustry="@item.Industry"
+                               sExpertise="@item.Expertise"
+                               sInterest="@item.Interest"
+                               sProfile="@item.Profile"
+
+                               >View Info</btn></td>
+
                     </tr>
                     }
                   </tbody>
                 </table>
               </div>
+
+              <div class="modal fade bs-example-modal-lg2" tabindex="-1" role="dialog"
+                   aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title mt-0" id="myLargeModalLabel">
+                        Add Mentor
+                      </h5><button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form >
+
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-12">
+
+                              <div class="row">
+                                <div class="col-md-9">
+                                  <div class="row ">
+                                    <div class="form-group col-md-4">
+                                      <label>First Name*</label>
+                                      <input type="text" readonly id="ssFirstName" name="ssFirstName" class="colorpicker-default form-control" placeholder="Firstname">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label>Last Name*</label>
+                                      <input type="text" readonly id="ssLastName" name="ssLastName" class="colorpicker-default form-control" placeholder="Lastname">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label>Nick Name</label>
+                                      <input type="text" readonly id="ssNickName" name="ssNickName" class="colorpicker-default form-control" placeholder="Nick Name">
+                                    </div>
+                                  </div>
+
+                                  <div class="row ">
+                                    <div class="form-group col-md-4">
+                                      <label>Email*</label>
+                                      <input type="email" readonly id="ssEmail" name="ssEmail" class="colorpicker-default form-control" placeholder="email@website.com">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label>Phone Number 1*</label>
+                                      <input type="text" readonly id="ssPhoneNumberMobile" name="ssPhoneNumberMobile" class="colorpicker-default form-control" placeholder="Primary (mobile)">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label>Phone Number 2</label>
+                                      <input type="text" readonly id="ssPhoneNumberWork" name="ssPhoneNumberWork" class="colorpicker-default form-control" placeholder="Secondary (work)">
+                                    </div>
+                                  </div>
+
+                                  <div class="row ">
+                                    <div class="form-group col-md-12">
+                                      <label> Address*</label>
+                                      <input type="text" readonly id="ssAddress" name="ssAddress" class="colorpicker-default form-control" placeholder="Street No & Name" />
+                                    </div>
+                                  </div>
+
+                                </div>
+                                <div class="col-md-3 ">
+                                  <label> Headshot</label>
+
+                                  <img class="form-control" style="height:200px;" name="imageUrl" id="imageUrl" src=""/>
+
+
+                                </div>
+                              </div>
+
+
+                              <div class="row ">
+                                <div class="form-group col-md-4">
+                                  <label>City*</label>
+                                  <input type="text" readonly id="ssCity" name="ssCity" class="colorpicker-default form-control" placeholder="City">
+                                </div>
+                                <div class="form-group col-md-4">
+                                  <label>Province*</label>
+                                  <input type="text" readonly id="ssProvince" name="ssProvince" class="colorpicker-default form-control" placeholder="Province">
+                                </div>
+                                <div class="form-group col-md-4">
+                                  <label>Country*</label>
+                                  <input type="text" readonly id="Country" name="Country" class="colorpicker-default form-control" placeholder=" Country">
+                                </div>
+                              </div>
+
+                              <div class="row ">
+                                <div class="form-group col-md-4">
+                                  <label>Industires</label>
+                                  <textarea type="text" readonly id="ssIndustry" name="ssIndustry" class="colorpicker-default form-control" placeholder="List of Indusries"></textarea>
+                                </div>
+                                <div class="form-group col-md-4">
+                                  <label>Expertise</label>
+                                  <textarea type="text" readonly id="ssExpertise" name="ssExpertise" class="colorpicker-default form-control" placeholder="List of Areas of Exprtise"></textarea>
+                                </div>
+                                <div class="form-group col-md-4">
+                                  <label>Interest</label>
+                                  <textarea type="text" readonly id="ssInterest" name="ssInterest" class="colorpicker-default form-control" placeholder="List of Interests"></textarea>
+                                </div>
+                              </div>
+
+                              <div class="row ">
+                                <div class="form-group col-md-8">
+                                  <label>Profile</label>
+                                  <textarea type="text" readonly id="ssProfile" name="ssProfile" class="colorpicker-default form-control" placeholder="Brief Profile"></textarea>
+                                </div>
+                                <div class="form-group col-md-4">
+                                  <label>Uploaded Profile</label>
+                                  <br />
+                                  <a id="ssProfileUrl" target="_blank" name="ssProfileUrl" href="">Download Profile</a>
+
+                                </div>
+                              </div>
+
+                            </div>
+
+
+
+                          </div>
+                        </div>
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          @*<button type="submit" class="btn btn-primary">Add Mentor</button>*@
+                        </div>
+                      </form>
+                      @*id="submitMentor" name="submitMentor"*@
+                    </div>
+
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+
             </div>
           </div><!-- end col -->
         </div><!-- end row -->
@@ -316,8 +435,6 @@
 <script src="~/assets/js/metisMenu.min.js"></script>
 <script src="~/assets/js/jquery.slimscroll.js"></script>
 <script src="~/assets/js/waves.min.js"></script>
-
-
 
 <script src="~/plugins/chartist/js/chartist.min.js"></script>
 <script src="~/plugins/chartist/js/chartist-plugin-tooltip.min.js"></script><!-- peity JS -->
@@ -345,11 +462,272 @@
 <script src="~/plugins/sweet-alert2/sweetalert2.min.js" aria-hidden="true"></script>
 
 
+@*<!-- END wrapper --><!-- jQuery  -->
+<script src="~/assets/js/jquery.min.js"></script>
+<script src="~/assets/js/bootstrap.bundle.min.js"></script>
+<script src="~/assets/js/metisMenu.min.js"></script>
+<script src="~/assets/js/jquery.slimscroll.js"></script>
+<script src="~/assets/js/waves.min.js"></script><!-- Dropzone js -->
+<script src="~/plugins/dropzone/dist/dropzone.js"></script><!-- App js -->
+<script src="~/assets/js/app.js"></script>*@
+
+
 @*@section Scripts {*@
 
 <script type="text/javascript">
+  $(document).ready(function () {
+    $('#DataTable').DataTable();
+    $('#checkBoxAll').click(function () {
+      if ($(this).is(":checked")) {
+        $(".chkCheckBoxId").prop("checked", true)
+      }
+      else {
+        $(".chkCheckBoxId").prop("checked", false)
+      }
+    });
+  });
+</script>
+
+<script type="text/javascript">
+
+
+          $(document).delegate('#viewProfile', 'click', function (e) {
+
+            firstname = $(this).attr('sFirst');
+            profileurl = $(this).attr('sProfileURl');
+            imageurl = $(this).attr('sImageUrl');
+
+
+
+
+          //console.log(description, department);
+
+            $('input[name=ssFirstName]').val(firstname);
+            //$('input[name=ssProfileUrl]').href(profileurl);
+            //$('input[name=imageUrl]').src(imageurl);
+            document["imageUrl"].src = "/" + imageurl;
+            var a = document.getElementById('ssProfileUrl');
+            a.href = "/" + profileurl;
+
+
+            $('input[name=ssLastName]').val($(this).attr('sLastName'));
+            $('input[name=ssOtherName]').val($(this).attr('sOtherName'));
+            $('input[name=ssNickName]').val($(this).attr('sNickName'));
+            $('input[name=ssEmail]').val($(this).attr('sEmail'));
+            $('input[name=ssPhoneNumberMobile]').val($(this).attr('sPhoneNumberMobile'));
+            $('input[name=ssPhoneNumberWork]').val($(this).attr('sPhoneNumberWork'));
+            $('input[name=ssAddress]').val($(this).attr('sAddress'));
+            $('input[name=ssCity]').val($(this).attr('sCity'));
+            $('input[name=ssProvince]').val($(this).attr('sProvince'));
+            $('input[name=ssCountry]').val($(this).attr('sCountry'));
+            $('input[name=ssIndustry]').val($(this).attr('sIndustry'));
+            $('input[name=ssExpertise]').val($(this).attr('sExpertise'));
+            $('input[name=ssInterest]').val($(this).attr('sInterest'));
+            $('input[name=ssProfile]').val($(this).attr('sProfile'));
+
+
+            //$('input[name=eEmailAddress]').val(email);
+            //$('input[name=eTotalAmount]').val(amount);
+
+        });
+
 
   $(document).ready(function () {
+
+    $("#sendMailList").click(function (event) {
+
+      event.preventDefault();
+
+      var yourArray = new Array();
+      var emaillist = "";
+
+      $("#datatable-buttons tbody tr input:checkbox").each(function () {
+
+        if ($(this).is(':checked')) {
+          yourArray.push(this.name);
+
+          emaillist = emaillist + this.name + ',';
+        }
+
+        //yourArray.push($(this).val());
+      });
+
+
+      console.log(emaillist)
+      window.open("mailto:" + emaillist, "_self")
+    });
+
+
+    $("#setActive").click(function (event) {
+
+      event.preventDefault();
+
+      var yourArray = new Array();
+      var mentids = "";
+
+      $("#datatable-buttons tbody tr input:checkbox").each(function () {
+
+        if ($(this).is(':checked')) {
+          yourArray.push(this.name);
+
+          mentids = mentids + this.value + ',';
+        }
+
+        //yourArray.push($(this).val());
+      });
+
+      $.ajax({
+        type: "POST",
+        url: "/Mentors/SetActive",
+        data: JSON.stringify(mentids),
+        dataType: "json",
+        contentType: 'application/json; charset=utf-8',
+        headers: {
+          RequestVerificationToken:
+            $('input:hidden[name="__RequestVerificationToken"]').val()
+        },
+        success: function (r) {
+
+          if (r.msg == "Success") {
+
+            window.location.reload();
+
+          } else if (r.msg == "Fail") {
+
+            alert(r.msg);
+
+          } else if (r.msg == "No Data") {
+            alert(r.msg);
+
+          } else {
+            alert(r.msg);
+          }
+          //alert(r.msg);
+          // window.location.reload();
+
+        },
+        error: function () {
+          alert(r.msg);
+        }
+      });
+
+    });
+
+    $("#setInactive").click(function (event) {
+
+      event.preventDefault();
+
+      var yourArray = new Array();
+      var mentids = "";
+
+      $("#datatable-buttons tbody tr input:checkbox").each(function () {
+
+        if ($(this).is(':checked')) {
+          yourArray.push(this.name);
+
+          mentids = mentids + this.value + ',';
+        }
+
+        //yourArray.push($(this).val());
+      });
+
+      $.ajax({
+        type: "POST",
+        url: "/Mentors/SetInActive",
+        data: JSON.stringify(mentids),
+        dataType: "json",
+        contentType: 'application/json; charset=utf-8',
+        headers: {
+          RequestVerificationToken:
+            $('input:hidden[name="__RequestVerificationToken"]').val()
+        },
+        success: function (r) {
+
+          if (r.msg == "Success") {
+
+            window.location.reload();
+
+          } else if (r.msg == "Fail") {
+
+            alert(r.msg);
+
+          } else if (r.msg == "No Data") {
+            alert(r.msg);
+
+          } else {
+            alert(r.msg);
+          }
+          //alert(r.msg);
+          // window.location.reload();
+
+        },
+        error: function () {
+          alert(r.msg);
+        }
+      });
+
+    });
+
+    $("#delete").click(function (event) {
+
+      event.preventDefault();
+
+      var yourArray = new Array();
+      var mentids = "";
+
+      $("#datatable-buttons tbody tr input:checkbox").each(function () {
+
+        if ($(this).is(':checked')) {
+          yourArray.push(this.name);
+
+          mentids = mentids + this.value + ',';
+        }
+
+        //yourArray.push($(this).val());
+      });
+
+      var result = confirm("Want to delete mentor(s)?");
+      if (result) {
+
+        $.ajax({
+          type: "POST",
+          url: "/Mentors/Delete",
+          data: JSON.stringify(mentids),
+          dataType: "json",
+          contentType: 'application/json; charset=utf-8',
+          headers: {
+            RequestVerificationToken:
+              $('input:hidden[name="__RequestVerificationToken"]').val()
+          },
+          success: function (r) {
+
+            if (r.msg == "Success") {
+
+              window.location.reload();
+
+            } else if (r.msg == "Fail") {
+
+              alert(r.msg);
+
+            } else if (r.msg == "No Data") {
+              alert(r.msg);
+
+            } else {
+              alert(r.msg);
+            }
+            //alert(r.msg);
+            // window.location.reload();
+
+          },
+          error: function () {
+            alert(r.msg);
+          }
+        });
+
+      }
+
+
+    });
 
     $("#submitMentor").click(function (event) {
 
@@ -388,7 +766,7 @@
         success: function (r) {
 
           if (r.msg == "Success") {
-            
+
             window.location.reload();
 
           } else if (r.msg == "Fail") {

@@ -21,54 +21,58 @@
         </a>
     </div>*@
     <nav class="navbar-custom" style="background-color:#D2303B !important">
-        <ul class="navbar-right list-inline float-right mb-0">
-            <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
-                <form role="search" class="app-search">
-                    <div class="form-group mb-0">
-                        @*<input type="text" class="form-control" placeholder="Search..">
-                        <button type="submit"><i class="fa fa-search"></i></button>*@
-                    </div>
-                </form>
-            </li><!-- language-->
-            <!-- full screen -->
-           <!-- notification -->
-            
-            <li class="dropdown notification-list list-inline-item">
-                <div class="dropdown notification-list nav-pro-img">
-                    <a class="dropdown-toggle nav-link arrow-none waves-effect nav-user" data-toggle="dropdown"
-                       href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="~/assets/images/users/user-4.jpg" alt="user" class="rounded-circle">
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right profile-dropdown">
-                        <!-- item--> <a class="dropdown-item" href="#">
-                            <i class="mdi mdi-account-circle m-r-5"></i> Profile
-                        </a>
-                        @*<a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5"></i>My Wallet
-                        </a>
-                        <a class="dropdown-item d-block" href="#">
-                            <span class="badge badge-success float-right">11</span><i class="mdi mdi-settings m-r-5"></i> Settings
-                        </a>
-                        <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline m-r-5"></i>Lock screen
-                        </a>*@
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger" href="#">
+      <ul class="navbar-right list-inline float-right mb-0">
+        <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
+          <form role="search" class="app-search">
+            <div class="form-group mb-0">
+              @*<input type="text" class="form-control" placeholder="Search..">
+          <button type="submit"><i class="fa fa-search"></i></button>*@
+            </div>
+          </form>
+        </li><!-- language-->
+        <!-- full screen -->
+        <!-- notification -->
 
-                            @if (SignInManager.IsSignedIn(User))
-                            {
-                                <form class="form-inline" asp-action="Logout" asp-controller="Account" method="post">
-                                    <i class="mdi mdi-power text-danger"></i>
-                                    <button type="submit" class="btn ">
-                                        <span class="btn-default">Logout</span>
-                                    </button>
-                                </form>
 
-                            }
 
-                        </a>
-                    </div>
-                </div>
-            </li>
-        </ul>
+        <li class="dropdown notification-list list-inline-item">
+          <div class="dropdown notification-list nav-pro-img">
+            <a class="dropdown-toggle nav-link arrow-none waves-effect nav-user" data-toggle="dropdown"
+               href="#" role="button" aria-haspopup="false" aria-expanded="false">
+              <i class="fas fa-user h2"></i>
+              @*<img src="~/assets/images/users/user-4.jpg" alt="user" class="rounded-circle">*@
+            </a>
+            <div class="dropdown-menu dropdown-menu-right profile-dropdown">
+              <!-- item--> 
+              @*<a class="dropdown-item" href="#">
+                <i class="mdi mdi-account-circle m-r-5"></i> View Profile
+              </a>*@
+
+
+              <a asp-action="SetPassword" asp-controller="Manage" class="dropdown-item" ><i class="mdi mdi-lock-open-outline m-r-5"></i>
+              Change Password
+
+              </a>
+
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-danger" href="#">
+
+                @if (SignInManager.IsSignedIn(User))
+                {
+                  <form class="form-inline" asp-action="Logout" asp-controller="Account" method="post">
+                    <i class="mdi mdi-power text-danger"></i>
+                    <button type="submit" class="btn ">
+                      <span class="btn-default">Logout</span>
+                    </button>
+                  </form>
+
+                }
+
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
         <ul class="list-inline menu-left mb-0">
             <li class="float-left">
     

@@ -19,6 +19,6 @@ namespace Net2._2Identity.Data
         public DbSet<User> User { get; set; }
         public DbSet<Member> Members { get; set; }
         public DbSet<Mentor> Mentors { get; set; }
-
+        public DbSet<Assignment> Assignments { get; set; }
     }
 }

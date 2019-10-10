@@ -27,13 +27,13 @@
   <link href="~/assets/css/icons.css" rel="stylesheet" type="text/css">
   <link href="~/assets/css/style.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body style="background:url(/img/Picture1.png)">
   <div class="home-btn d-none d-sm-block"><a asp-controller="Home" asp-action="Index" class="text-dark"><i class="fas fa-home h2"></i></a></div>
   <div class="wrapper-page">
     <div class="card overflow-hidden account-card mx-3" >
       <div class="bg-primary p-4 text-white text-center position-relative" style="background-color:#D2303B !important">
         <h4 class="font-20 m-b-5">TME Mentor Portal</h4>
-        <p class="text-white-50 mb-4">Sign in to continue to TME.</p>
+        <p class="text-white-50 mb-4">Sign in to continue.</p>
         @*<a href="index.html" class="logo logo-admin"><img src="assets/images/logo-sm.png" height="24" alt="logo"></a>*@
       </div>
       <div class="account-card-content">
@@ -65,8 +65,8 @@
 
 
     <div class="m-t-40 text-center">
-      <p>Don't have an account ? <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]" class="font-500 text-primary">Signup now</a></p>
-      <p>© 2019 TME.</p>
+      @*<p>Don't have an account ? <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]" class="font-500 text-primary">Signup now</a></p>*@
+      <p style="color:white;">© 2019 TME.</p>
     </div>
   </div>
   <!-- end wrapper-page --><!-- jQuery  -->

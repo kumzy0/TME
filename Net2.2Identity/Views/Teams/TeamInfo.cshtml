@@ -116,7 +116,7 @@
                           </div>
                           <div class="form-group col-md-4">
                             <label>Country*</label>
-                            <input type="text" id="Country" name="Country" class="colorpicker-default form-control" placeholder="E.g Embedded Systems Startups">
+                            <input type="text" id="Country" name="Country" class="colorpicker-default form-control" placeholder="Country">
                           </div>
                         </div>
                         <div class="row ">
@@ -171,13 +171,27 @@
                       <div class="card-title">
 
                         <input hidden id="TeamId" name="TeamId" asp-for="Team.Id" />
-                        <div class="form-group col-md-6">
-                          <label>Venture</label>
-                          <input type="text" asp-for="Team.VentureName" class="colorpicker-default form-control" readonly placeholder="Vendors">
-                        </div>
-                        <div class="form-group col-md-6">
-                          <label>Industry</label>
-                          <input type="text" asp-for="Team.Industry" class="colorpicker-default form-control" readonly placeholder="Industries">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group col-md-12">
+                              <label>Venture</label>
+                              <input type="text" asp-for="Team.VentureName" class="colorpicker-default form-control" readonly placeholder="Vendors">
+                            </div>
+                            <div class="form-group col-md-12">
+                              <label>Industry</label>
+                              <input type="text" asp-for="Team.Industry" class="colorpicker-default form-control" readonly placeholder="Industries">
+                            </div>
+
+                          </div>
+                          <div class="col-md-4">
+                            <label>Mentor(s)</label>
+                            <hr />
+                            @foreach (var item in Model.Assignments)
+                            {
+                              <p>@item.Mentor.FullName</p>
+                            }
+
+                          </div>
                         </div>
 
 
@@ -205,7 +219,7 @@
                       <th>Email</th>
                       <th>Phone Number</th>
                       <th>Country</th>
-                      <th>Actions</th>
+                      @*<th>Actions</th>*@
                     </tr>
                   </thead>
                   <tbody>
@@ -217,11 +231,11 @@
                         <td>@item.Email</td>
                         <td>@item.PhoneNumberMobile</td>
                         <td>@item.Country</td>
-                        <td>
+                        @*<td>
                           <a asp-action="#" class="btn btn-info">View</a> |
                           <a asp-action="#" class="btn btn-warning">Edit</a> |
                           <a asp-action="#" class="btn btn-danger">Delete</a>
-                        </td>
+                        </td>*@
                       </tr>
                     }
 
@@ -290,9 +304,9 @@
         City: $("#City").val(),
         Province: $("#Province").val(),
         Country: $("#Country").val(),
-        Student: $("#Student").val(),
-        Alumni: $("#Alumni").val(),
-        Other: $("#Other").val(),
+        //Student: $("#Student").val(),
+        //Alumni: $("#Alumni").val(),
+        //Other: $("#Other").val(),
       };
 
 

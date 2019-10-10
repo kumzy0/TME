@@ -8,6 +8,7 @@ namespace TME.Models
   public class Mentor : BaseClass
   {
     public Guid Id { get; set; }
+    public string FullName { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string OtherName { get; set; }
@@ -29,5 +30,8 @@ namespace TME.Models
 
     public bool IsActive { get; set; }
     public string Status { get; set; }
+
+    public string ImageUrl { get; set; }
+    public string ProfileUrl { get; set; }
   }
 }

@@ -1,6 +1,6 @@
-﻿
+﻿@model  IEnumerable<TME.Models.Assignment>
 @{
-  ViewData["Title"] = "Index";
+  ViewData["Title"] = "Assign Mentor";
 }
 
 
@@ -81,16 +81,16 @@
                       <div class="row ">
                         <div class="form-group col-md-5">
                           <label>Team</label>
-                          <input type="text" hidden id="autoTeamId" />
-                          <input type="text" id="autoTeam" name="autoTeam" class="form-control" placeholder="Team Positive">
+
+                          <select asp-items="ViewBag.Teams" name="TeamId" id="TeamId" class="form-control">
+                          </select>
                         </div>
                         <div class="form-group col-md-1 align-content-center">
                           <i class="mdi mdi-account-switch mdi-48px m-b-15"></i>
                         </div>
                         <div class="form-group col-md-5">
                           <label>Mentor</label>
-                          <input type="text" hidden id="autoMentorId" />
-                          <input type="text" autocomplete="on" class="colorpicker-default form-control" placeholder="Prof Jang">
+                          <select asp-items="ViewBag.Mentors" name="MentorId" id="MentorId" class="form-control"></select>
                         </div>
 
                       </div>
@@ -101,7 +101,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit</button>
+                <button id="btnAssign" name="btnAssign" type="button" class="btn btn-primary">Submit</button>
               </div>
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->
@@ -121,16 +121,17 @@
                         <h4 class="mt-0 header-title m-b-20"></h4>
                         <form class="repeater" enctype="multipart/form-data">
                           <div data-repeater-list="group-a">
-                            <div data-repeater-item class="row">
-                              <div class="form-group col-lg-3"></div>
-                              <div class="form-group col-lg-6">
-                                <label for=""></label> <input type="text" id="name" placeholder=" To search, type name, company name or email and press Enter ......" class="form-control">
-                              </div>
 
-                              @*<div class="col-lg-1 align-self-center">
-                                    <input data-repeater-delete type="button" class="btn btn-primary btn-block" value="Search">
-                                </div>*@
+                            <div class="dropdown pt-3 d-inline-block">
+                              <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</a>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                @*<a class="dropdown-item" href="#">Set as Active</a>
+    <a class="dropdown-item" href="#">Set as Inactive</a>
+    <div class="dropdown-divider"></div>*@
+                                <button class="dropdown-item" id="delete" name="delete" type="button">Delete</button>
+                              </div>
                             </div>
+
                           </div>
                         </form>
                       </div>
@@ -146,19 +147,24 @@
                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                   <thead>
                     <tr>
+                      <th><input type="checkbox" id="checkBoxAll"  class="custom-checkbox chkCheckBoxId" /></th>
                       <th>Venture Name</th>
                       <th>Mentor</th>
                       <th>Date</th>
-                      <th>Action</th>
+                      @*<th>Action</th>*@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>2011/04/25</td>
-                      <td><a asp-action="TeamInfo" class="btn btn-primary">View Info</a></td>
-                    </tr>
+                    @foreach (var item in Model)
+                    {
+                      <tr>
+                        <td><input type="checkbox" name="ID" value="@item.Id" class="custom-checkbox chkCheckBoxId" /></td>
+                        <td>@item.Team.VentureName</td>
+                        <td>@item.Mentor.FullName</td>
+                        <td>@item.DateCreated.ToString("MMM dd, yyyy")</td>
+                        @*<td><a asp-action="TeamInfo" class="btn btn-primary">View Info</a></td>*@
+                      </tr>
+                    }
                   </tbody>
                 </table>
               </div>
@@ -171,82 +177,201 @@
 </div>
 
 <!-- jQuery  -->
-@*<script src="~/assets/js/jquery.min.js"></script>*@
-@*<script src="~/assets/js/metisMenu.min.js"></script>
-  <script src="~/assets/js/jquery.slimscroll.js"></script>
-  <script src="~/assets/js/waves.min.js"></script>
+<script src="~/assets/js/jquery.min.js"></script>
+<script src="~/assets/js/metisMenu.min.js"></script>
+<script src="~/assets/js/jquery.slimscroll.js"></script>
+<script src="~/assets/js/waves.min.js"></script>
 
-  <script src="~/plugins/chartist/js/chartist.min.js"></script>
-  <script src="~/plugins/chartist/js/chartist-plugin-tooltip.min.js"></script><!-- peity JS -->
-  <script src="~/plugins/peity-chart/jquery.peity.min.js"></script>
-  <script src="~/assets/pages/dashboard.js"></script><!-- App js -->
-  <script src="~/assets/js/app.js"></script>*@
+<script src="~/plugins/chartist/js/chartist.min.js"></script>
+<script src="~/plugins/chartist/js/chartist-plugin-tooltip.min.js"></script><!-- peity JS -->
+<script src="~/plugins/peity-chart/jquery.peity.min.js"></script>
+<script src="~/assets/pages/dashboard.js"></script><!-- App js -->
+<script src="~/assets/js/app.js"></script>
 
-@*<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script><!-- Buttons examples -->
-  <script src="~/plugins/datatables/dataTables.buttons.min.js"></script>
-  <script src="~/plugins/datatables/buttons.bootstrap4.min.js"></script>
-  <script src="~/plugins/datatables/jszip.min.js"></script>
-  <script src="~/plugins/datatables/pdfmake.min.js"></script>
-  <script src="~/plugins/datatables/vfs_fonts.js"></script>
-  <script src="~/plugins/datatables/buttons.html5.min.js"></script>
-  <script src="~/plugins/datatables/buttons.print.min.js"></script>
-  <script src="~/plugins/datatables/buttons.colVis.min.js"></script><!-- Responsive examples -->
-  <script src="~/plugins/datatables/dataTables.responsive.min.js"></script>
-  <script src="~/plugins/datatables/responsive.bootstrap4.min.js"></script><!-- Datatable init js -->
-  <script src="assets/js/app.js"></script>
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script><!-- Buttons examples -->
+<script src="~/plugins/datatables/dataTables.buttons.min.js"></script>
+<script src="~/plugins/datatables/buttons.bootstrap4.min.js"></script>
+<script src="~/plugins/datatables/jszip.min.js"></script>
+<script src="~/plugins/datatables/pdfmake.min.js"></script>
+<script src="~/plugins/datatables/vfs_fonts.js"></script>
+<script src="~/plugins/datatables/buttons.html5.min.js"></script>
+<script src="~/plugins/datatables/buttons.print.min.js"></script>
+<script src="~/plugins/datatables/buttons.colVis.min.js"></script><!-- Responsive examples -->
+<script src="~/plugins/datatables/dataTables.responsive.min.js"></script>
+<script src="~/plugins/datatables/responsive.bootstrap4.min.js"></script><!-- Datatable init js -->
+<script src="assets/js/app.js"></script>
 
-  <script src="~/assets/pages/datatables.init.js"></script>*@
+<script src="~/assets/pages/datatables.init.js"></script>
 
-@*<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+@*<script src="~/assets/pages/sweet-alert.init.js" aria-hidden="true"></script>*@
+<script src="~/plugins/sweet-alert2/sweetalert2.min.js" aria-hidden="true"></script>
 
 
-@*@section Scripts {*@
-
-@*<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#DataTable').DataTable();
+    $('#checkBoxAll').click(function () {
+      if ($(this).is(":checked")) {
+        $(".chkCheckBoxId").prop("checked", true)
+      }
+      else {
+        $(".chkCheckBoxId").prop("checked", false)
+      }
+    });
+  });
+</script>
 
 
 <script type="text/javascript">
 
   $(document).ready(function () {
 
-    $('#autoTeam').autocomplete({
+        $("#btnAssign").click(function (event) {
 
-      source: '/api/AssignMentor/SearchTeam',
+      event.preventDefault();
+
+        var menteam = {
+          MentorId: $("#MentorId").val(),
+          TeamId: $("#TeamId").val()
+        };
+
+
+      console.log(menteam);
+
+      $.ajax({
+        type: "POST",
+        url: "/AssignMentors/Assign",
+        data: JSON.stringify(menteam),
+        dataType: "json",
+        contentType: 'application/json; charset=utf-8',
+        headers: {
+          RequestVerificationToken:
+            $('input:hidden[name="__RequestVerificationToken"]').val()
+        },
+        success: function (r) {
+
+          if (r.msg == "Success") {
+
+            window.location.reload();
+
+          } else if (r.msg == "Fail") {
+
+            alert(r.msg);
+
+          } else if (r.msg == "No Data") {
+            alert(r.msg);
+
+          } else {
+            alert(r.msg);
+          }
+          //alert(r.msg);
+          // window.location.reload();
+
+        },
+        error: function () {
+          alert(r.msg);
+        }
+      });
+        });
+
+        $("#delete").click(function (event) {
+
+      event.preventDefault();
+
+      var yourArray = new Array();
+      var mentids = "";
+
+      $("#datatable-buttons tbody tr input:checkbox").each(function () {
+
+        if ($(this).is(':checked')) {
+          yourArray.push(this.name);
+
+          mentids = mentids + this.value + ',';
+        }
+
+        //yourArray.push($(this).val());
+      });
+
+      var result = confirm("Want to delete Assignment(s)?");
+      if (result) {
+
+        $.ajax({
+          type: "POST",
+          url: "/AssignMentors/Delete",
+          data: JSON.stringify(mentids),
+          dataType: "json",
+          contentType: 'application/json; charset=utf-8',
+          headers: {
+            RequestVerificationToken:
+              $('input:hidden[name="__RequestVerificationToken"]').val()
+          },
+          success: function (r) {
+
+            if (r.msg == "Success") {
+
+              window.location.reload();
+
+            } else if (r.msg == "Fail") {
+
+              alert(r.msg);
+
+            } else if (r.msg == "No Data") {
+              alert(r.msg);
+
+            } else {
+              alert(r.msg);
+            }
+            //alert(r.msg);
+            // window.location.reload();
+
+          },
+          error: function () {
+            alert(r.msg);
+          }
+        });
+
+      }
+
+
+    });
+
+
+    $('#btnAssignyug').autocomplete({
+
+      source: '/api/AssignMentor/Assign',
       select: function (event, ui) {
 
-        var tag = ui.item.value;
+       // var tag = ui.item.value;
 
-        var AutoCus = {
-          Name: ui.item.value,
-          QuoteId: $("#Id").val()
+        var menteam = {
+          MentorId: $("#MentorId").val(),
+          TeamId: $("#TeamId").val()
 
         };
 
         console.log(AutoCus);
 
-        //$.ajax({
-        //  type: "POST",
-        //  url: "/Invoice/GetCustomer",
-        //  data: JSON.stringify(AutoCus),
-        //  dataType: "json",
-        //  contentType: 'application/json; charset=utf-8',
-        //  headers: {
-        //    RequestVerificationToken:
-        //      $('input:hidden[name="__RequestVerificationToken"]').val()
-        //  },
-        //  success: function (r) {
+        $.ajax({
+          type: "POST",
+          url: "/Invoice/GetCustomer",
+          data: JSON.stringify(AutoCus),
+          dataType: "json",
+          contentType: 'application/json; charset=utf-8',
+          headers: {
+            RequestVerificationToken:
+              $('input:hidden[name="__RequestVerificationToken"]').val()
+          },
+          success: function (r) {
 
-        //    document.getElementById("cusAddress").value = r.city + "\n" + r.email + "\n" + r.phone;
-        //    document.getElementById("cusId").value = r.Id;
+            document.getElementById("cusAddress").value = r.city + "\n" + r.email + "\n" + r.phone;
+            document.getElementById("cusId").value = r.Id;
 
-        //  },
-        //  error: function () {
-        //    alert("Error occured!!")
-        //  }
-        //});
+          },
+          error: function () {
+            alert("Error occured!!")
+          }
+        });
 
 
       }
@@ -254,65 +379,6 @@
     });
 
 
-    //$("#submitMentor").click(function (event) {
-
-    //  event.preventDefault();
-
-    //  var PostMentor = {
-    //    FirstName: $("#FirstName").val(),
-    //    LastName: $("#LastName").val(),
-    //    NickName: $("#NickName").val(),
-    //    Email: $("#Email").val(),
-    //    PhoneNumberMobile: $("#PhoneNumberMobile").val(),
-    //    PhoneNumberWork: $("#PhoneNumberWork").val(),
-    //    Address: $("#Address").val(),
-    //    City: $("#City").val(),
-    //    Province: $("#Province").val(),
-    //    Country: $("#Country").val(),
-    //    Industry: $("#Industry").val(),
-    //    Expertise: $("#Expertise").val(),
-    //    Interest: $("#Interest").val(),
-    //    Profile: $("#Profile").val(),
-    //  };
-
-
-    //  console.log(PostMentor);
-
-    //  $.ajax({
-    //    type: "POST",
-    //    url: "/Mentors/AddMentor",
-    //    data: JSON.stringify(PostMentor),
-    //    dataType: "json",
-    //    contentType: 'application/json; charset=utf-8',
-    //    headers: {
-    //      RequestVerificationToken:
-    //        $('input:hidden[name="__RequestVerificationToken"]').val()
-    //    },
-    //    success: function (r) {
-
-    //      if (r.msg == "Success") {
-
-    //        window.location.reload();
-
-    //      } else if (r.msg == "Fail") {
-
-    //        alert(r.msg);
-
-    //      } else if (r.msg == "No Data") {
-    //        alert(r.msg);
-
-    //      } else {
-    //        alert(r.msg);
-    //      }
-    //      //alert(r.msg);
-    //      // window.location.reload();
-
-    //    },
-    //    error: function () {
-    //      alert(r.msg);
-    //    }
-    //  });
-    //});
   });
 
 </script>

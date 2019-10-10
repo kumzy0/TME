@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Net2._2Identity.Data;
 using Net2._2Identity.Models;
 using TME.Models;
@@ -28,20 +29,40 @@ namespace TME.Controllers
 
     public IActionResult Index()
         {
+
       var teams = _context.Teams.ToList();
-            return View(teams);
+      var members = _context.Members.ToList();
+
+      List<TeamView> tvList = new List<TeamView>();
+      TeamView tv;
+
+      foreach (var item in teams)
+      {
+        tv = new TeamView();
+
+        tv.Team = item;
+        tv.TeamMember = members.Where(x => x.TeamId == item.Id).Count();
+
+        tvList.Add(tv);
+
+      }
+
+
+
+            return View(tvList);
         }
 
     public IActionResult TeamInfo(Guid id)
     {
       var team = _context.Teams.FirstOrDefault(x => x.Id == id);
       var members = _context.Members.Where(x => x.TeamId == id).ToList();
+      var assignment = _context.Assignments.Where(x => x.TeamId == id).Include(x => x.Mentor).ToList();
 
       TeamInfoViewModel tiVM = new TeamInfoViewModel();
 
       tiVM.Team = team;
       tiVM.TeamMember = members;
-
+      tiVM.Assignments = assignment;
 
       return View(tiVM);
     }
@@ -125,6 +146,170 @@ namespace TME.Controllers
         msg = "Fail"
       });
     }
+
+
+    [HttpPost]
+    public IActionResult SetInActive([FromBody]string mentids)
+    {
+      if (mentids == null)
+      {
+        return Json(new
+        {
+          msg = "No Data"
+        }
+       );
+      }
+      var mentors = _context.Teams;
+
+
+      var metid = mentids.Split(',');
+
+      //mentor.
+
+      try
+      {
+
+        foreach (var item in metid)
+        {
+          if (item != "")
+          {
+            var mm = mentors.FirstOrDefault(s => s.Id == Guid.Parse(item));
+
+            mm.IsActive = false;
+
+            _context.Update(mm);
+            _context.SaveChanges();
+
+          }
+        }
+
+
+        return Json(new
+        {
+          msg = "Success"
+        }
+  );
+      }
+      catch (Exception ee)
+      {
+
+      }
+
+      return Json(
+      new
+      {
+        msg = "Fail"
+      });
+    }
+
+    [HttpPost]
+    public IActionResult SetActive([FromBody]string mentids)
+    {
+      if (mentids == null)
+      {
+        return Json(new
+        {
+          msg = "No Data"
+        }
+       );
+      }
+      var mentors = _context.Teams;
+
+
+      var metid = mentids.Split(',');
+
+      //mentor.
+
+      try
+      {
+
+        foreach (var item in metid)
+        {
+          if (item != "")
+          {
+            var mm = mentors.FirstOrDefault(s => s.Id == Guid.Parse(item));
+
+            mm.IsActive = true;
+
+            _context.Update(mm);
+            _context.SaveChanges();
+
+          }
+        }
+
+
+        return Json(new
+        {
+          msg = "Success"
+        }
+  );
+      }
+      catch (Exception ee)
+      {
+
+      }
+
+      return Json(
+      new
+      {
+        msg = "Fail"
+      });
+    }
+
+    [HttpPost]
+    public IActionResult Delete([FromBody]string mentids)
+    {
+      if (mentids == null)
+      {
+        return Json(new
+        {
+          msg = "No Data"
+        }
+       );
+      }
+      var mentors = _context.Teams;
+
+
+      var metid = mentids.Split(',');
+
+      //mentor.
+
+      try
+      {
+
+        foreach (var item in metid)
+        {
+          if (item != "")
+          {
+            var mm = mentors.FirstOrDefault(s => s.Id == Guid.Parse(item));
+
+            mm.IsActive = true;
+
+            _context.Remove(mm);
+            _context.SaveChanges();
+
+          }
+        }
+
+
+        return Json(new
+        {
+          msg = "Success"
+        }
+  );
+      }
+      catch (Exception ee)
+      {
+
+      }
+
+      return Json(
+      new
+      {
+        msg = "Fail"
+      });
+    }
+
 
   }
 }

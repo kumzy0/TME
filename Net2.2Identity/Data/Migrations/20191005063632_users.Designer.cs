@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Net2._2Identity.Data;
 
 namespace Net2._2Identity.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191005063632_users")]
+    partial class users
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -190,36 +192,6 @@ namespace Net2._2Identity.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("TME.Models.Assignment", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("DateCreated");
-
-                    b.Property<DateTime>("DateModified");
-
-                    b.Property<DateTime>("DateUpdated");
-
-                    b.Property<bool>("IsActive");
-
-                    b.Property<bool>("IsDeleted");
-
-                    b.Property<Guid>("MentorId");
-
-                    b.Property<string>("Status");
-
-                    b.Property<Guid>("TeamId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MentorId");
-
-                    b.HasIndex("TeamId");
-
-                    b.ToTable("Assignments");
-                });
-
             modelBuilder.Entity("TME.Models.Member", b =>
                 {
                     b.Property<Guid>("Id")
@@ -299,10 +271,6 @@ namespace Net2._2Identity.Data.Migrations
 
                     b.Property<string>("FirstName");
 
-                    b.Property<string>("FullName");
-
-                    b.Property<string>("ImageUrl");
-
                     b.Property<string>("Industry");
 
                     b.Property<string>("Interest");
@@ -322,8 +290,6 @@ namespace Net2._2Identity.Data.Migrations
                     b.Property<string>("PhoneNumberWork");
 
                     b.Property<string>("Profile");
-
-                    b.Property<string>("ProfileUrl");
 
                     b.Property<string>("Province");
 
@@ -424,19 +390,6 @@ namespace Net2._2Identity.Data.Migrations
                     b.HasOne("Net2._2Identity.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("TME.Models.Assignment", b =>
-                {
-                    b.HasOne("TME.Models.Mentor", "Mentor")
-                        .WithMany()
-                        .HasForeignKey("MentorId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("TME.Models.Team", "Team")
-                        .WithMany()
-                        .HasForeignKey("TeamId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
