@@ -147,6 +147,98 @@ namespace TME.Controllers
       });
     }
 
+    [HttpPost]
+    public IActionResult EditMembers([FromBody]Member member)
+    {
+      if (member == null)
+      {
+        return Json(new
+        {
+          msg = "No Data"
+        }
+       );
+      }
+
+      var mm = _context.Members.FirstOrDefault(x => x.Id == member.Id);
+
+
+
+
+      try
+      {
+        mm.FirstName = member.FirstName;
+        mm.NickName = member.NickName;
+        mm.LastName = member.LastName;
+        mm.Email = member.Email;
+        mm.PhoneNumberMobile = member.PhoneNumberMobile;
+        mm.PhoneNumberWork = member.PhoneNumberWork;
+        mm.Address = member.Address;
+        mm.City = member.City;
+        mm.Province = member.Province;
+        mm.Country = member.Country;
+        mm.Education = member.Education;
+
+        _context.Update(mm);
+        _context.SaveChanges();
+
+        return Json(new
+        {
+          msg = "Success"
+        }
+  );
+      }
+      catch (Exception ee)
+      {
+
+      }
+
+      return Json(
+      new
+      {
+        msg = "Fail"
+      });
+    }
+
+    [HttpPost]
+    public IActionResult DeleteMember([FromBody]Guid id)
+    {
+      if (id == null)
+      {
+        return Json(new
+        {
+          msg = "No Data"
+        }
+       );
+      }
+      var member = _context.Members.FirstOrDefault(x => x.Id == id);
+
+
+      try
+      {
+
+            _context.Remove(member);
+            _context.SaveChanges();
+
+
+
+        return Json(new
+        {
+          msg = "Success"
+        }
+  );
+      }
+      catch (Exception ee)
+      {
+
+      }
+
+      return Json(
+      new
+      {
+        msg = "Fail"
+      });
+    }
+
 
     [HttpPost]
     public IActionResult SetInActive([FromBody]string mentids)

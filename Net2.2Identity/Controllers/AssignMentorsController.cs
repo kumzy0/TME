@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -13,7 +14,9 @@ using TME.ViewModel;
 
 namespace TME.Controllers
 {
-    public class AssignMentorsController : Controller
+  [Authorize]
+
+  public class AssignMentorsController : Controller
     {
     private readonly ApplicationDbContext _context;
     private readonly UserManager<ApplicationUser> _userManager;
@@ -156,6 +159,114 @@ namespace TME.Controllers
       });
     }
 
+    [HttpPost]
+    public IActionResult SetActive([FromBody]string mentids)
+    {
+      if (mentids == null)
+      {
+        return Json(new
+        {
+          msg = "No Data"
+        }
+       );
+      }
+      var mentors = _context.Assignments;
+
+
+      var metid = mentids.Split(',');
+
+      //mentor.
+
+      try
+      {
+
+        foreach (var item in metid)
+        {
+          if (item != "")
+          {
+            var mm = mentors.FirstOrDefault(s => s.Id == Guid.Parse(item));
+
+            mm.IsActive = true;
+
+            _context.Update(mm);
+            _context.SaveChanges();
+
+          }
+        }
+
+
+        return Json(new
+        {
+          msg = "Success"
+        }
+  );
+      }
+      catch (Exception ee)
+      {
+
+      }
+
+      return Json(
+      new
+      {
+        msg = "Fail"
+      });
+    }
+
+
+    [HttpPost]
+    public IActionResult SetInActive([FromBody]string mentids)
+    {
+      if (mentids == null)
+      {
+        return Json(new
+        {
+          msg = "No Data"
+        }
+       );
+      }
+      var mentors = _context.Assignments;
+
+
+      var metid = mentids.Split(',');
+
+      //mentor.
+
+      try
+      {
+
+        foreach (var item in metid)
+        {
+          if (item != "")
+          {
+            var mm = mentors.FirstOrDefault(s => s.Id == Guid.Parse(item));
+
+            mm.IsActive = false;
+
+            _context.Update(mm);
+            _context.SaveChanges();
+
+          }
+        }
+
+
+        return Json(new
+        {
+          msg = "Success"
+        }
+  );
+      }
+      catch (Exception ee)
+      {
+
+      }
+
+      return Json(
+      new
+      {
+        msg = "Fail"
+      });
+    }
 
 
   }

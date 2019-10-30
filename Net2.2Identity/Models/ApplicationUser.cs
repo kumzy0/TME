@@ -12,5 +12,8 @@ namespace Net2._2Identity.Models
       public string FullName { get; set; }
     public string Status { get; set; }
     public string UserRole { get; set; }
+
+    public bool? IsEnabled { get; set; }
+
     }
 }

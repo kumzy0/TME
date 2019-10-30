@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Net2._2Identity.Data;
 
 namespace Net2._2Identity.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191010073434_activated")]
+    partial class activated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -240,8 +242,6 @@ namespace Net2._2Identity.Data.Migrations
                     b.Property<DateTime>("DateModified");
 
                     b.Property<DateTime>("DateUpdated");
-
-                    b.Property<string>("Education");
 
                     b.Property<string>("Email");
 

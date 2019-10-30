@@ -125,9 +125,9 @@
                             <div class="dropdown pt-3 d-inline-block">
                               <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</a>
                               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                @*<a class="dropdown-item" href="#">Set as Active</a>
-    <a class="dropdown-item" href="#">Set as Inactive</a>
-    <div class="dropdown-divider"></div>*@
+                                <button class="dropdown-item" id="setActive" name="setActive" type="button">Set as Active</button>
+                                <button class="dropdown-item" id="setInactive" name="setInactive" type="button">Set as Inactive</button>
+                                <div class="dropdown-divider"></div>
                                 <button class="dropdown-item" id="delete" name="delete" type="button">Delete</button>
                               </div>
                             </div>
@@ -147,10 +147,12 @@
                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                   <thead>
                     <tr>
-                      <th><input type="checkbox" id="checkBoxAll"  class="custom-checkbox chkCheckBoxId" /></th>
+                      <th><input type="checkbox" id="checkBoxAll" class="custom-checkbox chkCheckBoxId" /></th>
                       <th>Venture Name</th>
                       <th>Mentor</th>
                       <th>Date</th>
+                      <th>IsActive</th>
+
                       @*<th>Action</th>*@
                     </tr>
                   </thead>
@@ -162,6 +164,17 @@
                         <td>@item.Team.VentureName</td>
                         <td>@item.Mentor.FullName</td>
                         <td>@item.DateCreated.ToString("MMM dd, yyyy")</td>
+                        <td>
+                          @if (item.IsActive)
+                          {
+                            <a class="btn btn-sm btn-success">Active</a>
+                          }
+                          else
+                          {
+                            <a class="btn btn-sm btn-warning">Not Active</a>
+
+                          }
+                        </td>
                         @*<td><a asp-action="TeamInfo" class="btn btn-primary">View Info</a></td>*@
                       </tr>
                     }
@@ -299,6 +312,128 @@
         $.ajax({
           type: "POST",
           url: "/AssignMentors/Delete",
+          data: JSON.stringify(mentids),
+          dataType: "json",
+          contentType: 'application/json; charset=utf-8',
+          headers: {
+            RequestVerificationToken:
+              $('input:hidden[name="__RequestVerificationToken"]').val()
+          },
+          success: function (r) {
+
+            if (r.msg == "Success") {
+
+              window.location.reload();
+
+            } else if (r.msg == "Fail") {
+
+              alert(r.msg);
+
+            } else if (r.msg == "No Data") {
+              alert(r.msg);
+
+            } else {
+              alert(r.msg);
+            }
+            //alert(r.msg);
+            // window.location.reload();
+
+          },
+          error: function () {
+            alert(r.msg);
+          }
+        });
+
+      }
+
+
+    });
+
+            $("#setActive").click(function (event) {
+
+      event.preventDefault();
+
+      var yourArray = new Array();
+      var mentids = "";
+
+      $("#datatable-buttons tbody tr input:checkbox").each(function () {
+
+        if ($(this).is(':checked')) {
+          yourArray.push(this.name);
+
+          mentids = mentids + this.value + ',';
+        }
+
+        //yourArray.push($(this).val());
+      });
+
+      var result = confirm("Want to Set Active?");
+      if (result) {
+
+        $.ajax({
+          type: "POST",
+          url: "/AssignMentors/SetActive",
+          data: JSON.stringify(mentids),
+          dataType: "json",
+          contentType: 'application/json; charset=utf-8',
+          headers: {
+            RequestVerificationToken:
+              $('input:hidden[name="__RequestVerificationToken"]').val()
+          },
+          success: function (r) {
+
+            if (r.msg == "Success") {
+
+              window.location.reload();
+
+            } else if (r.msg == "Fail") {
+
+              alert(r.msg);
+
+            } else if (r.msg == "No Data") {
+              alert(r.msg);
+
+            } else {
+              alert(r.msg);
+            }
+            //alert(r.msg);
+            // window.location.reload();
+
+          },
+          error: function () {
+            alert(r.msg);
+          }
+        });
+
+      }
+
+
+    });
+
+            $("#setInactive").click(function (event) {
+
+      event.preventDefault();
+
+      var yourArray = new Array();
+      var mentids = "";
+
+      $("#datatable-buttons tbody tr input:checkbox").each(function () {
+
+        if ($(this).is(':checked')) {
+          yourArray.push(this.name);
+
+          mentids = mentids + this.value + ',';
+        }
+
+        //yourArray.push($(this).val());
+      });
+
+      var result = confirm("Want to Set InActive?");
+      if (result) {
+
+        $.ajax({
+          type: "POST",
+          url: "/AssignMentors/SetInActive",
           data: JSON.stringify(mentids),
           dataType: "json",
           contentType: 'application/json; charset=utf-8',

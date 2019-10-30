@@ -54,6 +54,142 @@ namespace TME.Controllers
         }
 
     [HttpPost]
+    public async Task<IActionResult> EditUser([FromBody]User user)
+    {
+      if (user == null)
+      {
+        return Json(new
+        {
+          msg = "No Data"
+        }
+       );
+      }
+
+
+
+      var userr = _userManager.FindByEmailAsync(user.Email).Result;
+      var roles = await _userManager.GetRolesAsync(userr);
+
+
+      userr.FullName = user.Name;
+      userr.UserRole = user.UserRole;
+
+
+
+      try
+      {
+        _context.Update(userr);
+        _context.SaveChanges();
+
+        foreach (var roleName in roles)
+        {
+          await _userManager.RemoveFromRoleAsync(userr, roleName);
+        }
+
+        await _userManager.AddToRoleAsync(userr, user.UserRole);
+
+
+        return Json(new
+        {
+          msg = "Success"
+        }
+  );
+      }
+      catch (Exception ee)
+      {
+
+      }
+
+      return Json(
+      new
+      {
+        msg = "Fail"
+      });
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Deactivate([FromBody]string email)
+    {
+      if (email == null)
+      {
+        return Json(new
+        {
+          msg = "No Data"
+        }
+       );
+      }
+
+      var userr = _userManager.FindByEmailAsync(email).Result;
+
+      userr.IsEnabled = false;
+      userr.Status = "Not Active";
+
+
+      try
+      {
+        _context.Update(userr);
+        _context.SaveChanges();
+
+        return Json(new
+        {
+          msg = "Success"
+        }
+  );
+      }
+      catch (Exception ee)
+      {
+
+      }
+
+      return Json(
+      new
+      {
+        msg = "Fail"
+      });
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Activate([FromBody]string email)
+    {
+      if (email == null)
+      {
+        return Json(new
+        {
+          msg = "No Data"
+        }
+       );
+      }
+
+      var userr = _userManager.FindByEmailAsync(email).Result;
+
+      userr.IsEnabled = true;
+      userr.Status = "Active";
+
+
+      try
+      {
+        _context.Update(userr);
+        _context.SaveChanges();
+
+        return Json(new
+        {
+          msg = "Success"
+        }
+  );
+      }
+      catch (Exception ee)
+      {
+
+      }
+
+      return Json(
+      new
+      {
+        msg = "Fail"
+      });
+    }
+
+    [HttpPost]
     public async Task<IActionResult> CreateUser(User newUser)
     {
       //var user = new ApplicationUser { UserName = newUser.Name, Email = newUser.Email };

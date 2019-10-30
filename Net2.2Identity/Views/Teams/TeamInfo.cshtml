@@ -7,7 +7,7 @@
 
 <style>
   .modal-lg {
-    max-width: 40% !important;
+    max-width: 60% !important;
   }
 </style>
 
@@ -101,7 +101,7 @@
                         <div class="row ">
                           <div class="form-group col-md-12">
                             <label> Address*</label>
-                            <textarea type="text" id="Address" name="Address" class="colorpicker-default form-control" placeholder="Enter your Address..."></textarea>
+                            <input type="text" id="Address" name="Address" class="colorpicker-default form-control" placeholder="Enter your Address..."></input>
                           </div>
                         </div>
 
@@ -119,6 +119,14 @@
                             <input type="text" id="Country" name="Country" class="colorpicker-default form-control" placeholder="Country">
                           </div>
                         </div>
+
+                        <div class="row ">
+                          <div class="form-group col-md-12">
+                            <label> Educational Background*</label>
+                            <textarea type="text" id="Education" name="Education" class="colorpicker-default form-control" placeholder="Enter Educational Details..."></textarea>
+                          </div>
+                        </div>
+
                         <div class="row ">
                           <div class="form-group col-md-3">
                             <label>Assign Teams</label>
@@ -159,7 +167,8 @@
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-        <!-- End of the Modal-->
+        
+      <!-- End of the Modal-->
         <!-- end row -->
         <div class="row">
           <div class="col-12">
@@ -212,6 +221,238 @@
                   <h6 class="page-title" style="padding-left:20px">Team Members</h6>
                 </div>
 
+
+                <div class="modal fade bs-example-modal-lg2" tabindex="-1" role="dialog"
+                     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title mt-0" id="myLargeModalLabel2">
+                          View Team Member
+                        </h5><button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                          ×
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="row ">
+                                  <div class="form-group col-md-4">
+                                    <label>First Name*</label>
+                                    <input type="text" id="vFirstName" name="vFirstName" class="colorpicker-default form-control" placeholder="First Name">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label>Last Name*</label>
+                                    <input type="text" id="vLastName" name="vLastName" class="colorpicker-default form-control" placeholder="Last Name">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label>Nick Name</label>
+                                    <input type="text" id="vNickName" name="vNickName" class="colorpicker-default form-control" placeholder="Nick name">
+                                  </div>
+                                </div>
+
+                                <div class="row ">
+                                  <div class="form-group col-md-4">
+                                    <label>Email*</label>
+                                    <input type="email" id="vEmail" name="vEmail" class="colorpicker-default form-control" placeholder="name@sample.com">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label>Phone Number*</label>
+                                    <input type="text" id="vPhoneNumberMobile" name="vPhoneNumberMobile" class="colorpicker-default form-control" placeholder="Primary (mobile)">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label>Phone Number 2</label>
+                                    <input type="text" id="vPhoneNumberWork" name="vPhoneNumberWork" class="colorpicker-default form-control" placeholder="Secondary (Work)">
+                                  </div>
+                                </div>
+                                <div class="row ">
+                                  <div class="form-group col-md-12">
+                                    <label> Address*</label>
+                                    <input type="text" id="vAddress" name="vAddress" class="colorpicker-default form-control" placeholder="Enter your Address..."></input>
+                                  </div>
+                                </div>
+
+                                <div class="row ">
+                                  <div class="form-group col-md-4">
+                                    <label>City*</label>
+                                    <input type="text" id="vCity" name="vCity" class="colorpicker-default form-control" placeholder="City">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label>Province*</label>
+                                    <input type="text" id="vProvince" name="vProvince" class="colorpicker-default form-control" placeholder="Province">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label>Country*</label>
+                                    <input type="text" id="vCountry" name="vCountry" class="colorpicker-default form-control" placeholder="Country">
+                                  </div>
+                                </div>
+
+                                <div class="row ">
+                                  <div class="form-group col-md-12">
+                                    <label> Educational Background*</label>
+                                    <textarea type="text" id="vEducation" name="vEducation" class="colorpicker-default form-control" placeholder="Enter Educational Details..."></textarea>
+                                  </div>
+                                </div>
+
+                                @*<div class="row ">
+                      <div class="form-group col-md-3">
+                        <label>Assign Teams</label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="Student" name="Student">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Student
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="Alumni" name="Alumni">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Alumni
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="Other" name="Other">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Other
+                          </label>
+                        </div>
+                      </div>
+
+                    </div>*@
+
+                              </div>
+
+
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              @*<button type="button" id="submitMember" name="submitMember" class="btn btn-primary">Add Member</button>*@
+                            </div>
+                          </div>
+
+                        </form>
+                      </div>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+                <div class="modal fade bs-example-modal-lg3" tabindex="-1" role="dialog"
+                     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title mt-0" id="myLargeModalLabel3">
+                          Edit Team Member
+                        </h5><button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                          ×
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="row ">
+                                  <input hidden id="vvId" name="vvId" />
+                                  <div class="form-group col-md-4">
+                                    <label>First Name*</label>
+                                    <input type="text" id="vvFirstName" name="vvFirstName" class="colorpicker-default form-control" placeholder="First Name">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label>Last Name*</label>
+                                    <input type="text" id="vvLastName" name="vvLastName" class="colorpicker-default form-control" placeholder="Last Name">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label>Nick Name</label>
+                                    <input type="text" id="vvNickName" name="vvNickName" class="colorpicker-default form-control" placeholder="Nick name">
+                                  </div>
+                                </div>
+
+                                <div class="row ">
+                                  <div class="form-group col-md-4">
+                                    <label>Email*</label>
+                                    <input type="email" id="vvEmail" name="vvEmail" class="colorpicker-default form-control" placeholder="name@sample.com">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label>Phone Number*</label>
+                                    <input type="text" id="vvPhoneNumberMobile" name="vPvhoneNumberMobile" class="colorpicker-default form-control" placeholder="Primary (mobile)">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label>Phone Number 2</label>
+                                    <input type="text" id="vvPhoneNumberWork" name="vvPhoneNumberWork" class="colorpicker-default form-control" placeholder="Secondary (Work)">
+                                  </div>
+                                </div>
+                                <div class="row ">
+                                  <div class="form-group col-md-12">
+                                    <label> Address*</label>
+                                    <input type="text" id="vvAddress" name="vvAddress" class="colorpicker-default form-control" placeholder="Enter your Address..."></input>
+                                  </div>
+                                </div>
+
+                                <div class="row ">
+                                  <div class="form-group col-md-4">
+                                    <label>City*</label>
+                                    <input type="text" id="vvCity" name="vvCity" class="colorpicker-default form-control" placeholder="City">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label>Province*</label>
+                                    <input type="text" id="vvProvince" name="vvProvince" class="colorpicker-default form-control" placeholder="Province">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label>Country*</label>
+                                    <input type="text" id="vvCountry" name="vvCountry" class="colorpicker-default form-control" placeholder="Country">
+                                  </div>
+                                </div>
+
+                                <div class="row ">
+                                  <div class="form-group col-md-12">
+                                    <label> Educational Background*</label>
+                                    <textarea type="text" id="vvEducation" name="vvEducation" class="colorpicker-default form-control" placeholder="Enter Educational Details..."></textarea>
+                                  </div>
+                                </div>
+
+                                @*<div class="row ">
+                      <div class="form-group col-md-3">
+                        <label>Assign Teams</label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="Student" name="Student">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Student
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="Alumni" name="Alumni">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Alumni
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="Other" name="Other">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Other
+                          </label>
+                        </div>
+                      </div>
+
+                    </div>*@
+
+                              </div>
+
+
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="button" id="editMember" name="editMember" class="btn btn-primary">Save</button>
+                            </div>
+                          </div>
+
+                        </form>
+                      </div>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
                 <table class="table table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                   <thead>
                     <tr>
@@ -219,7 +460,7 @@
                       <th>Email</th>
                       <th>Phone Number</th>
                       <th>Country</th>
-                      @*<th>Actions</th>*@
+                      <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -231,11 +472,36 @@
                         <td>@item.Email</td>
                         <td>@item.PhoneNumberMobile</td>
                         <td>@item.Country</td>
-                        @*<td>
-                          <a asp-action="#" class="btn btn-info">View</a> |
-                          <a asp-action="#" class="btn btn-warning">Edit</a> |
-                          <a asp-action="#" class="btn btn-danger">Delete</a>
-                        </td>*@
+                        <td>
+                          <btn name="viewProfile" id="viewProfile" data-toggle="modal" data-target=".bs-example-modal-lg2" class="btn btn-info"
+                               sFirstName="@item.FirstName"
+                               sLastName="@item.LastName"
+                               sOtherName="@item.NickName"
+                               sEmail="@item.Email"
+                               sPhoneNumberMobile="@item.PhoneNumberMobile"
+                               sPhoneNumberWork="@item.PhoneNumberWork"
+                               sAddress="@item.Address"
+                               sCity="@item.City"
+                               sProvince="@item.Province"
+                               sCountry="@item.Country"
+                               sEducation="@item.Education">View</btn> |
+
+                          <btn name="editProfile" id="editProfile" data-toggle="modal" data-target=".bs-example-modal-lg3" class="btn btn-warning"
+                               sId="@item.Id"
+                               ssFirstName="@item.FirstName"
+                               sLastName="@item.LastName"
+                               sOtherName="@item.NickName"
+                               sEmail="@item.Email"
+                               sPhoneNumberMobile="@item.PhoneNumberMobile"
+                               sPhoneNumberWork="@item.PhoneNumberWork"
+                               sAddress="@item.Address"
+                               sCity="@item.City"
+                               sProvince="@item.Province"
+                               sCountry="@item.Country"
+                               sEducation="@item.Education">Edit</btn> |
+
+                          <button type="button" theId="@item.Id" name="btnDelete" id="btnDelete" class="btn btn-danger">Delete</button>
+                        </td>
                       </tr>
                     }
 
@@ -286,7 +552,99 @@
 
 <script type="text/javascript">
 
+            $(document).delegate('#viewProfile', 'click', function (e) {
+
+            $('input[name=vFirstName]').val($(this).attr('sFirstName'));
+            $('input[name=vLastName]').val($(this).attr('sLastName'));
+            $('input[name=vNickName]').val($(this).attr('sOtherName'));
+            $('input[name=vEmail]').val($(this).attr('sEmail'));
+            $('input[name=vPhoneNumberMobile]').val($(this).attr('sPhoneNumberMobile'));
+            $('input[name=vPhoneNumberWork]').val($(this).attr('sPhoneNumberWork'));
+            $('input[name=vAddress]').val($(this).attr('sAddress'));
+            $('input[name=vCity]').val($(this).attr('sCity'));
+            $('input[name=vProvince]').val($(this).attr('sProvince'));
+            $('input[name=vCountry]').val($(this).attr('sCountry'));
+            $('textarea[name=vEducation]').val($(this).attr('sEducation'));
+
+
+            //$('input[name=eEmailAddress]').val(email);
+            //$('input[name=eTotalAmount]').val(amount);
+
+        });
+
+              $(document).delegate('#editProfile', 'click', function (e) {
+
+                            $('input[name=vvId]').val($(this).attr('sId'));
+            $('input[name=vvFirstName]').val($(this).attr('ssFirstName'));
+            $('input[name=vvLastName]').val($(this).attr('sLastName'));
+            $('input[name=vvNickName]').val($(this).attr('sOtherName'));
+            $('input[name=vvEmail]').val($(this).attr('sEmail'));
+            $('input[name=vvPhoneNumberMobile]').val($(this).attr('sPhoneNumberMobile'));
+            $('input[name=vvPhoneNumberWork]').val($(this).attr('sPhoneNumberWork'));
+            $('input[name=vvAddress]').val($(this).attr('sAddress'));
+            $('input[name=vvCity]').val($(this).attr('sCity'));
+            $('input[name=vvProvince]').val($(this).attr('sProvince'));
+            $('input[name=vvCountry]').val($(this).attr('sCountry'));
+            $('textarea[name=vvEducation]').val($(this).attr('sEducation'));
+
+
+            //$('input[name=eEmailAddress]').val(email);
+            //$('input[name=eTotalAmount]').val(amount);
+
+        });
+
+
   $(document).ready(function () {
+
+        $("#btnDelete").click(function (event) {
+
+      event.preventDefault();
+
+      var id = $(this).attr('theId');//$("#btnDeactivate").value;
+
+      var result = confirm("Want to Delete member?");
+      if (result) {
+
+        $.ajax({
+          type: "POST",
+        url: "/Teams/DeleteMember",
+          data: JSON.stringify(id),
+          dataType: "json",
+          contentType: 'application/json; charset=utf-8',
+          headers: {
+            RequestVerificationToken:
+              $('input:hidden[name="__RequestVerificationToken"]').val()
+          },
+          success: function (r) {
+
+            if (r.msg == "Success") {
+
+              window.location.reload();
+
+            } else if (r.msg == "Fail") {
+
+              alert(r.msg);
+
+            } else if (r.msg == "No Data") {
+              alert(r.msg);
+
+            } else {
+              alert(r.msg);
+            }
+            //alert(r.msg);
+            // window.location.reload();
+
+          },
+          error: function () {
+            alert(r.msg);
+          }
+        });
+
+      }
+
+
+    });
+
 
     $("#submitMember").click(function (event) {
 
@@ -304,7 +662,7 @@
         City: $("#City").val(),
         Province: $("#Province").val(),
         Country: $("#Country").val(),
-        //Student: $("#Student").val(),
+        Education: $("#Education").val(),
         //Alumni: $("#Alumni").val(),
         //Other: $("#Other").val(),
       };
@@ -347,6 +705,67 @@
         }
       });
     });
+
+        $("#editMember").click(function (event) {
+
+      event.preventDefault();
+
+      var PostMember = {
+        Id: $("#vvId").val(),
+        FirstName: $("#vvFirstName").val(),
+        NickName: $("#vvNickName").val(),
+        LastName: $("#vvLastName").val(),
+        Email: $("#vvEmail").val(),
+        PhoneNumberMobile: $("#vvPhoneNumberMobile").val(),
+        PhoneNumberWork: $("#vvPhoneNumberWork").val(),
+        Address: $("#vvAddress").val(),
+        City: $("#vvCity").val(),
+        Province: $("#vvProvince").val(),
+        Country: $("#vvCountry").val(),
+        Education: $("#vvEducation").val(),
+        //Alumni: $("#Alumni").val(),
+        //Other: $("#Other").val(),
+      };
+
+
+      console.log(PostMember);
+
+      $.ajax({
+        type: "POST",
+        url: "/Teams/EditMembers",
+        data: JSON.stringify(PostMember),
+        dataType: "json",
+        contentType: 'application/json; charset=utf-8',
+        headers: {
+          RequestVerificationToken:
+            $('input:hidden[name="__RequestVerificationToken"]').val()
+        },
+        success: function (r) {
+
+          if (r.msg == "Success") {
+
+            window.location.reload();
+
+          } else if (r.msg == "Fail") {
+
+            alert(r.msg);
+
+          } else if (r.msg == "No Data") {
+            alert(r.msg);
+
+          } else {
+            alert(r.msg);
+          }
+          //alert(r.msg);
+          // window.location.reload();
+
+        },
+        error: function () {
+          alert(r.msg);
+        }
+      });
+    });
+
   });
 
 </script>

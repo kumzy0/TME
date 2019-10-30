@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<TME.Models.User>
 
 @{
-    ViewData["Title"] = "Manage User";
+  ViewData["Title"] = "Manage User";
 }
 
 
@@ -171,29 +171,112 @@
                   </thead>
                   <tbody>
                     @foreach (var item in Model)
-                                      {
-                    <tr>
-                      <td>@item.Name</td>
-                      <td>@item.Email</td>
-                      <td>@item.UserRole</td>
+                    {
+                      <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Email</td>
+                        <td>@item.UserRole</td>
 
-                      <td> @item.Status</td>
-                      <td>
-                        @if ( item.Status != null)
-                                            {
-                        <a asp-action="#" class="btn btn-info">Edit</a>
-                        <a asp-action="#" class="btn btn-warning">Deactivate</a>
+                        <td> @item.Status</td>
+                        <td>
+                          @if (item.Status != null)
+                          {
+                            <button type="button" id="EditUser" name="EditUser" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg2"
+                                    sName="@item.Name"
+                                    sEmail="@item.Email"
+                                    sUserRole="@item.UserRole"
+                                    sStatus="@item.Status">
+                              Edit
+                            </button>
 
-                                            }
 
-                        @*<a asp-action="#" class="btn btn-danger">Delete</a>*@
-                      </td>
-                    </tr>
+                            @if (item.Status == "Active")
+                            {
+                              <button type="button" theEmail="@item.Email" name="btnDeactivate" id="btnDeactivate" class="btn btn-warning">Deactivate</button>
+                            }
+                            else
+                            {
+                              <button type="button" theEmail="@item.Email" name="btnActivate" id="btnActivate" class="btn btn-info">Activate</button>
 
-                                      }
+                            }
+
+                          }
+
+                          @*<a asp-action="#" class="btn btn-danger">Delete</a>*@
+                        </td>
+                      </tr>
+
+                    }
 
                   </tbody>
                 </table>
+
+                <div class="modal fade bs-example-modal-lg2" tabindex="-1" role="dialog"
+                     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title mt-0" id="myLargeModalLabel">
+                          Edit User
+                        </h5><button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                          ×
+                        </button>
+                      </div>
+                      <div class="modal-body">
+
+                        <form asp-action="CreateUser" method="post">
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="row ">
+                                  <div class="form-group col-md-12">
+                                    <label>Full Name</label>
+                                    <input id="ssName" name="ssName" type="text" class="colorpicker-default form-control" placeholder="Enter your Fullname...">
+                                  </div>
+                                </div>
+
+                                <div class="row ">
+                                  <div class="form-group col-md-8">
+                                    <label>Email</label>
+                                    <input id="ssEmail" readonly name="ssEmail" type="email" class="colorpicker-default form-control" placeholder="name@sample.com">
+                                  </div>
+                                  @*<div class="form-group col-md-4">
+                                      <label>Phone Number</label>
+                                      <input id="PhoneNumber" name="PhoneNumber" type="text" class="colorpicker-default form-control" placeholder="Mobile Number">
+                                    </div>*@
+                                </div>
+                                @*<div class="row">
+                                    <div class="form-group col-md-6">
+                                      <label>Password</label>
+                                      <input id="Password" name="Password" type="text" class="colorpicker-default form-control" value="TMEUser123." placeholder="Password">
+                                    </div>
+                                  </div>*@
+
+                                <div class="row">
+                                  <div class="form-group col-md-6">
+                                    <label>User Role</label>
+                                    <select id="ssUserRole" name="ssUserRole" class="form-control">
+                                      <option value="User">User</option>
+                                      <option value="Admin">Admin</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" id="btnEdit" name="btnEdit" class="btn btn-primary">Edit User</button>
+                            </div>
+
+                          </div>
+
+                        </form>
+                      </div>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
               </div>
             </div>
           </div><!-- end col -->
@@ -233,4 +316,172 @@
 <script src="~/assets/pages/datatables.init.js"></script>
 
 
+<script type="text/javascript">
+
+
+  $(document).delegate('#EditUser', 'click', function (e) {
+
+    firstname = $(this).attr('sName');
+
+    $('input[name=ssName]').val(firstname);
+    $('input[name=ssEmail]').val($(this).attr('sEmail'));
+    $('select[name=ssUserRole]').val($(this).attr('sUserRole'));
+
+  });
+
+
+  $(document).ready(function () {
+
+
+    $("#btnDeactivate").click(function (event) {
+
+      event.preventDefault();
+
+      var email = $(this).attr('theEmail');//$("#btnDeactivate").value;
+
+      var result = confirm("Want to Deactivate?");
+      if (result) {
+
+        $.ajax({
+          type: "POST",
+        url: "/ManagerUsers/Deactivate",
+          data: JSON.stringify(email),
+          dataType: "json",
+          contentType: 'application/json; charset=utf-8',
+          headers: {
+            RequestVerificationToken:
+              $('input:hidden[name="__RequestVerificationToken"]').val()
+          },
+          success: function (r) {
+
+            if (r.msg == "Success") {
+
+              window.location.reload();
+
+            } else if (r.msg == "Fail") {
+
+              alert(r.msg);
+
+            } else if (r.msg == "No Data") {
+              alert(r.msg);
+
+            } else {
+              alert(r.msg);
+            }
+            //alert(r.msg);
+            // window.location.reload();
+
+          },
+          error: function () {
+            alert(r.msg);
+          }
+        });
+
+      }
+
+
+    });
+
+    $("#btnActivate").click(function (event) {
+
+      event.preventDefault();
+
+      var email = $(this).attr('theEmail');//$("#btnDeactivate").value;
+
+      var result = confirm("Want to Activate?");
+      if (result) {
+
+        $.ajax({
+          type: "POST",
+        url: "/ManagerUsers/Activate",
+          data: JSON.stringify(email),
+          dataType: "json",
+          contentType: 'application/json; charset=utf-8',
+          headers: {
+            RequestVerificationToken:
+              $('input:hidden[name="__RequestVerificationToken"]').val()
+          },
+          success: function (r) {
+
+            if (r.msg == "Success") {
+
+              window.location.reload();
+
+            } else if (r.msg == "Fail") {
+
+              alert(r.msg);
+
+            } else if (r.msg == "No Data") {
+              alert(r.msg);
+
+            } else {
+              alert(r.msg);
+            }
+            //alert(r.msg);
+            // window.location.reload();
+
+          },
+          error: function () {
+            alert(r.msg);
+          }
+        });
+
+      }
+
+
+    });
+
+
+
+    $("#btnEdit").click(function (event) {
+
+      event.preventDefault();
+
+      var User = {
+        Email: $("#ssEmail").val(),
+        Name: $("#ssName").val(),
+        UserRole: $("#ssUserRole").val(),
+      };
+
+
+      console.log(User);
+
+      $.ajax({
+        type: "POST",
+        url: "/ManagerUsers/EditUser",
+        data: JSON.stringify(User),
+        dataType: "json",
+        contentType: 'application/json; charset=utf-8',
+        headers: {
+          RequestVerificationToken:
+            $('input:hidden[name="__RequestVerificationToken"]').val()
+        },
+        success: function (r) {
+
+          if (r.msg == "Success") {
+
+            window.location.reload();
+
+          } else if (r.msg == "Fail") {
+
+            alert(r.msg);
+
+          } else if (r.msg == "No Data") {
+            alert(r.msg);
+
+          } else {
+            alert(r.msg);
+          }
+          //alert(r.msg);
+          // window.location.reload();
+
+        },
+        error: function () {
+          alert(r.msg);
+        }
+      });
+    });
+  });
+
+</script>
 
