@@ -33,5 +33,7 @@ namespace TME.Models
 
     public string ImageUrl { get; set; }
     public string ProfileUrl { get; set; }
+
+    public string LinkedIn { get; set; }
   }
 }

@@ -77,6 +77,20 @@
                           </div>
                         </div>
 
+                        <div class="row ">
+                          <div class="form-group col-md-6">
+                            <label>JHSC Group*</label>
+                            <select id="JHSCGroup" name="JHSCGroup" class="colorpicker-default form-control">
+                              <option value="MTME">MTNE</option>
+                              <option value="Capstone">Capstone</option>
+                              <option value="Summer Institute">Summer Institute</option>
+                              <option value="Energia">Energia</option>
+                              <option value="I-STEM">I-STEM</option>
+
+                            </select>
+                          </div>
+                        </div>
+
                         <div class="row">
                           <div class="form-group col-md-12">
                             <label>Industry*</label>
@@ -142,6 +156,7 @@
                       <th>Venture Name</th>
                       <th>Industry</th>
                       <th>No of Members</th>
+                      <th>JHSC Group</th>
                       <th>Date Created</th>
                       <th>Status</th>
                       <th>View Details</th>
@@ -149,6 +164,7 @@
                   </thead>
                   <tbody>
 
+                    
                     @foreach (var item in Model)
                     {
                     <tr>
@@ -156,6 +172,7 @@
                       <td>@item.Team.VentureName</td>
                       <td>@item.Team.Industry</td>
                       <td>@item.TeamMember</td>
+                      <td>@item.Team.JHSCGroup</td>
                       <td>@item.Team.DateCreated.ToString("MMM dd, yyyy")</td>
                       <td>
                         @if (item.Team.IsActive)
@@ -465,6 +482,7 @@
       var PostVendor = {
         VentureName: $("#VentureName").val(),
         Industry: $("#Industry").val(),
+        JHSCGroup : $("#JHSCGroup").val()
       };
 
 

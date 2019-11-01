@@ -111,6 +111,13 @@
                               </div>
                             </div>
 
+                            <div class="row ">
+                              <div class="form-group col-md-12">
+                                <label> LinkedIn </label>
+                                <input type="text" required id="LinkedIn" name="LinkedIn" class="colorpicker-default form-control" placeholder="http://" />
+                              </div>
+                            </div>
+
                           </div>
                           <div class="col-md-3 ">
                             <label> Headshot</label>
@@ -137,12 +144,12 @@
 
                         <div class="row ">
                           <div class="form-group col-md-4">
-                            <label>Industires</label>
-                            <textarea type="text" id="Industry" name="Industry" class="colorpicker-default form-control" placeholder="List of Indusries"></textarea>
+                            <label>Industries</label>
+                            <textarea type="text" id="Industry" name="Industry" class="colorpicker-default form-control" placeholder="List of Industries"></textarea>
                           </div>
                           <div class="form-group col-md-4">
                             <label>Expertise</label>
-                            <textarea type="text" id="Expertise" name="Expertise" class="colorpicker-default form-control" placeholder="List of Areas of Exprtise"></textarea>
+                            <textarea type="text" id="Expertise" name="Expertise" class="colorpicker-default form-control" placeholder="List of Areas of Expertise"></textarea>
                           </div>
                           <div class="form-group col-md-4">
                             <label>Interest</label>
@@ -282,6 +289,7 @@
                                sExpertise="@item.Expertise"
                                sInterest="@item.Interest"
                                sProfile="@item.Profile"
+                               sLinkedIn="@item.LinkedIn"
 
                                >View Info</btn></td>
 
@@ -297,7 +305,7 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <h5 class="modal-title mt-0" id="myLargeModalLabel">
-                        Add Mentor
+                        View Mentor
                       </h5><button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                         ×
                       </button>
@@ -341,10 +349,19 @@
                                     </div>
                                   </div>
 
+                                  
+
                                   <div class="row ">
                                     <div class="form-group col-md-12">
                                       <label> Address*</label>
                                       <input type="text" readonly id="ssAddress" name="ssAddress" class="colorpicker-default form-control" placeholder="Street No & Name" />
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="row ">
+                                    <div class="form-group col-md-12">
+                                      <label> LinkedIn </label>
+                                      <input type="text" readonly id="ssLinkedIn" name="ssLinkedIn" class="colorpicker-default form-control" placeholder="http://" />
                                     </div>
                                   </div>
 
@@ -376,12 +393,12 @@
 
                               <div class="row ">
                                 <div class="form-group col-md-4">
-                                  <label>Industires</label>
-                                  <textarea type="text" readonly id="ssIndustry" name="ssIndustry" class="colorpicker-default form-control" placeholder="List of Indusries"></textarea>
+                                  <label>Industries</label>
+                                  <textarea type="text" readonly id="ssIndustry" name="ssIndustry" class="colorpicker-default form-control" placeholder="List of Industries"></textarea>
                                 </div>
                                 <div class="form-group col-md-4">
                                   <label>Expertise</label>
-                                  <textarea type="text" readonly id="ssExpertise" name="ssExpertise" class="colorpicker-default form-control" placeholder="List of Areas of Exprtise"></textarea>
+                                  <textarea type="text" readonly id="ssExpertise" name="ssExpertise" class="colorpicker-default form-control" placeholder="List of Areas of Expertise"></textarea>
                                 </div>
                                 <div class="form-group col-md-4">
                                   <label>Interest</label>
@@ -524,8 +541,9 @@
             $('input[name=ssExpertise]').val($(this).attr('sExpertise'));
             $('input[name=ssInterest]').val($(this).attr('sInterest'));
             $('input[name=ssProfile]').val($(this).attr('sProfile'));
+            $('input[name=ssLinkedIn]').val($(this).attr('sLinkedIn'));
 
-
+            LinkedIn
             //$('input[name=eEmailAddress]').val(email);
             //$('input[name=eTotalAmount]').val(amount);
 
@@ -748,6 +766,7 @@
         Expertise: $("#Expertise").val(),
         Interest: $("#Interest").val(),
         Profile: $("#Profile").val(),
+        LinkedIn: $("#LinkedIn").val()
       };
 
 

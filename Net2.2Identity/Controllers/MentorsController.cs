@@ -38,6 +38,26 @@ namespace TME.Controllers
     public async Task<IActionResult> AddMentor(IFormFile file, IFormFile resume, Mentor mentor)
     {
 
+      if (resume == null || resume.Length == 0)
+      {
+
+      }
+      else
+      {
+        var nam = Guid.NewGuid();
+
+        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "profile", nam.ToString() + resume.FileName);
+        var path2 = Path.Combine("profile", nam.ToString() + resume.FileName);
+
+        using (var stream = new FileStream(path, FileMode.Create))
+        {
+          await file.CopyToAsync(stream);
+          mentor.ProfileUrl = path2;
+        }
+
+      }
+
+
       if (file == null || file.Length == 0)
       {
 
@@ -57,24 +77,6 @@ namespace TME.Controllers
       }
 
 
-      if (resume == null || resume.Length == 0)
-      {
-
-      }
-      else
-      {
-        var nam = Guid.NewGuid();
-
-        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "profile", nam.ToString() + resume.FileName);
-        var path2 = Path.Combine("profile", nam.ToString() + resume.FileName);
-
-        using (var stream = new FileStream(path, FileMode.Create))
-        {
-          await file.CopyToAsync(stream);
-          mentor.ProfileUrl = path2;
-        }
-
-      }
 
 
 
